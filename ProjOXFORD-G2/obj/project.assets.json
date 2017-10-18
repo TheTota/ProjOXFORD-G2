@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Almarean\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
+    "restore": {
+      "projectUniqueName": "f:\\Documents\\Visual Studio 2017\\Projects\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "projectName": "ProjOXFORD-G2",
+      "projectPath": "f:\\Documents\\Visual Studio 2017\\Projects\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "packagesPath": "C:\\Users\\Almarean\\.nuget\\packages\\",
+      "outputPath": "f:\\Documents\\Visual Studio 2017\\Projects\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Almarean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net461"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "F:\\Documents\\BTS SIO\\SLAM - Développement_Base de données\\C#\\Packages_Nuget": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net461": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net461": {}
+    }
+  }
+}
