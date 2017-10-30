@@ -7,10 +7,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using MySql.Data.MySqlClient;  // Librairie de connexion à MySQL ajoutée en référence.
 
 namespace ProjOXFORD_G2
@@ -27,15 +27,15 @@ namespace ProjOXFORD_G2
         private const string CNX = @"Server=127.0.0.1; Port=3306; Database=oxford; Uid=root; Pwd=;";
 
         /// <summary>
-        /// Membre privé qui va contenir la requête.
-        /// </summary>
-        private string _requete;
-
-        /// <summary>
         /// Déclaration d'un objet de la classe MysqlConnection.
         /// Va être utilisé pour gérer la connexion à la base de données MySQL.
         /// </summary>
         private static MySqlConnection _connexion;
+
+        /// <summary>
+        /// Membre privé qui va contenir la requête.
+        /// </summary>
+        private string _requete;
 
         /// <summary>
         /// Méthode de connexion à la base de données.
@@ -69,13 +69,45 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
+        /// Méthode statique permettant d'exécuter la requete SQL 
+        /// enregistrée dans la variable requete.
+        /// Permet d'éviter la duplication de code.
+        /// </summary>
+        /// <param name="requete">Requête enregistrée.</param>
+        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
+        //public static void ExecuterRequete(string requete)
+        //{
+        //    try
+        //    {
+        //        MySqlCommand cmd = new MySqlCommand(requete, _connexion);
+        //        cmd.CommandType = CommandType.Text;
+        //        Console.WriteLine("Requête effectuée.");
+        //    }
+        //    catch
+        //    {
+        //        throw new Exception("La requête n'a pu aboutir.");
+        //    }
+        //}
+
+        /// <summary>
         /// Méthode de récupération de la photo.
         /// Destinée à l'affichage.
         /// </summary>
         public void RecupPhoto()
         {
             this._requete = @"SELECT value FROM photos;";
-            ExecuterCommande(this._requete);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(this._requete, _connexion);
+                cmd.CommandType = CommandType.Text;
+                var scalar = cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
+                Console.WriteLine("Requête effectuée.");
+                // ExecuterRequete(this._requete);
+            }
+            catch
+            {
+                throw new Exception("La requête n'a pu aboutir.");
+            }
         }
 
         /// <summary>
@@ -84,23 +116,14 @@ namespace ProjOXFORD_G2
         public void RecupInfosUser()
         {
             this._requete = @"SELECT photo, nom, prenom, type, birth, sexe, status, email FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceid;";
-            ExecuterCommande(this._requete);
-        }
-
-        /// <summary>
-        /// Méthode statique permettant d'exécuter la commande SQL 
-        /// enregistrée dans la variable requete.
-        /// Permet d'éviter la duplication de code.
-        /// </summary>
-        /// <param name="requete">Requête enregistrée.</param>
-        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
-        public static void ExecuterCommande(string requete)
-        {
             try
             {
-                MySqlCommand cmd = new MySqlCommand(requete, _connexion);
+                MySqlCommand cmd = new MySqlCommand(this._requete, _connexion);
+                cmd.Parameters.AddWithValue("@faceid", "");   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
                 cmd.CommandType = CommandType.Text;
+                var reader = cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
                 Console.WriteLine("Requête effectuée.");
+                // ExecuterRequete(this._requete);
             }
             catch
             {
