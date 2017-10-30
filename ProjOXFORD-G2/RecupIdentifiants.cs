@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 // Librairie de connexion à MySQL ajoutée en référence.
 using MySql.Data.MySqlClient;
 
-namespace ProjOXFORDG2
+namespace ProjOXFORD_G2
 {
     /// <summary>
     /// Classe qui va permettre la récupération des identifiants liés à la photo prise.
