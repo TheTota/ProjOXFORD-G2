@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;  // Librairie de connexion à MySQL ajoutée en référence.
 
-namespace ProjOXFORDG2
+namespace ProjOXFORD_G2
 {
     /// <summary>
     /// Classe qui va permettre la récupération des identifiants liés à la photo prise.
@@ -68,17 +68,37 @@ namespace ProjOXFORDG2
             }
         }
 
-        public void Comparer()
+        /// <summary>
+        /// Méthode de récupération de la photo.
+        /// Destinée à l'affichage.
+        /// </summary>
+        public void RecupPhoto()
         {
-
+            this._requete = @"SELECT value FROM photos;";
+            ExecuterCommande(this._requete);
         }
 
+        /// <summary>
+        /// Méthode de récupération des informations de l'utilisateur.
+        /// </summary>
         public void RecupInfosUser()
         {
             this._requete = @"SELECT photo, nom, prenom, type, birth, sexe, status, email FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceid;";
+            ExecuterCommande(this._requete);
+        }
+
+        /// <summary>
+        /// Méthode statique permettant d'exécuter la commande SQL 
+        /// enregistrée dans la variable requete.
+        /// Permet d'éviter la duplication de code.
+        /// </summary>
+        /// <param name="requete">Requête enregistrée.</param>
+        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
+        public static void ExecuterCommande(string requete)
+        {
             try
             {
-                MySqlCommand cmd = new MySqlCommand(this._requete, _connexion);
+                MySqlCommand cmd = new MySqlCommand(requete, _connexion);
                 cmd.CommandType = CommandType.Text;
                 Console.WriteLine("Requête effectuée.");
             }
