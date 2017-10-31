@@ -58,6 +58,7 @@ namespace ProjOXFORD_G2
 
         /// <summary>
         /// Méthode publique de fermeture de la connexion à la base de données MySQL.
+        /// Va permettre de libérer les ressources de la base de données après une requête.
         /// </summary>
         public static void FermerConnexion()
         {
@@ -103,9 +104,11 @@ namespace ProjOXFORD_G2
                 var scalar = cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
                 Console.WriteLine("Requête effectuée.");
                 // ExecuterRequete(this._requete);
+                FermerConnexion();
             }
             catch
             {
+                FermerConnexion();
                 throw new Exception("La requête n'a pu aboutir.");
             }
         }
@@ -124,9 +127,11 @@ namespace ProjOXFORD_G2
                 var reader = cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
                 Console.WriteLine("Requête effectuée.");
                 // ExecuterRequete(this._requete);
+                FermerConnexion();
             }
             catch
             {
+                FermerConnexion();
                 throw new Exception("La requête n'a pu aboutir.");
             }
         }
