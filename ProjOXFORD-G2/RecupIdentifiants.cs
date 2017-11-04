@@ -91,20 +91,39 @@ namespace ProjOXFORD_G2
         //}
 
         /// <summary>
-        /// Méthode de récupération de la photo.
-        /// Destinée à l'affichage.
+        /// Méthode de récupération des faceId stockés dans la BDD.
+        /// <return>Les faceId stockés en bases sous la forme de liste de string</return>
         /// </summary>
-        public void RecupPhoto()
+        public static List<string> RecupListFaceId()
         {
-            this._requete = @"SELECT value FROM photos;";
+            string requete = @"SELECT value FROM photos;";
             try
             {
-                MySqlCommand cmd = new MySqlCommand(this._requete, _connexion);
+                // Ouverture de la connexion à la BDD
+                OuvrirConnexion();
+
+                // Définition de la requête SQL
+                MySqlCommand cmd = new MySqlCommand(requete, _connexion);
                 cmd.CommandType = CommandType.Text;
-                var scalar = cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
-                Console.WriteLine("Requête effectuée.");
-                // ExecuterRequete(this._requete);
+
+                // Execution de la requête SQL et récuparation du datareader
+                var resultReader = cmd.ExecuteReader();
+
+                // Récupération des valeurs et création d'une liste de FaceId (sous forme de chaine)
+                List<string> lesFaceId = new List<string>();
+                if (resultReader.HasRows)
+                {
+                    while (resultReader.Read())
+                    {
+                        lesFaceId.Add(resultReader.GetString(0));
+                    }
+                }
+
+                // Fermeture de la connexion
                 FermerConnexion();
+
+                // On retourne le résultat de la requête
+                return lesFaceId;
             }
             catch
             {

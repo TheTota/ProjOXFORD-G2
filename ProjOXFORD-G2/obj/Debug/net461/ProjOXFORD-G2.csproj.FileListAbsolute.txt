@@ -14,3 +14,20 @@ D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.ProjOXFORD-G2.exe.config
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.runtimeconfig.json
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.runtimeconfig.dev.json
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.ProjOXFORD-G2.exe.config
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.CoreCompileInputs.cache
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.AssemblyInfo.cs
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.pdb
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe.config
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.pdb
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\System.Net.Http.Extensions.dll
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\System.Net.Http.Primitives.dll
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Common.dll
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Face.dll
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Newtonsoft.Json.dll
+C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MySql.Data.dll
