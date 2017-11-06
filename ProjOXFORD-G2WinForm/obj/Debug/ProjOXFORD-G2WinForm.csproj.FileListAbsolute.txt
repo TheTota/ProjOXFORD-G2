@@ -11,3 +11,17 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\Pr
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.CoreCompileInputs.cache
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.exe
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2WinForm.exe.config
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2WinForm.exe
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2WinForm.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MetroFramework.Design.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MetroFramework.Fonts.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MetroFramework.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csprojResolveAssemblyReference.cache
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identification1.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.Properties.Resources.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.GenerateResource.Cache
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.CoreCompileInputs.cache
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.exe
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationVisuel.resources

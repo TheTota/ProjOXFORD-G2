@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ProjOXFORD_G2WinForm
 {
-    public partial class identificationVisuel : Form
+    public partial class identificationVisuel : MetroFramework.Forms.MetroForm
     {
         public identificationVisuel()
         {
             InitializeComponent();
+        }
+
+        private void identificationVisuel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

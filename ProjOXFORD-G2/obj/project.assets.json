@@ -582,8 +582,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LD\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Dream\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -591,17 +590,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\LD\\Desktop\\Projet Recon\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "projectUniqueName": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
       "projectName": "ProjOXFORD-G2",
-      "projectPath": "C:\\Users\\LD\\Desktop\\Projet Recon\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
-      "packagesPath": "C:\\Users\\LD\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LD\\Desktop\\Projet Recon\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
+      "projectPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "packagesPath": "C:\\Users\\Dream\\.nuget\\packages\\",
+      "outputPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\LD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dream\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -615,11 +611,6 @@
         "net461": {
           "projectReferences": {}
         }
-      },
-      "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
       }
     },
     "frameworks": {

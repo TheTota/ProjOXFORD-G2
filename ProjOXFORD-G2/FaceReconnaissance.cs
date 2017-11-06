@@ -33,8 +33,9 @@ namespace ProjOXFORD_G2
                 // Reconnaissance faciale qui retourne true or false en fonction du résultat de la reco
                 Task<bool> taskRecoFaciale = ReconnaissanceFacialeAsync();
 
-                // Avertissement de l'utilisateur car le traitement peut être long
-                Console.WriteLine("\nReconnaissance faciale en cours, merci de patienter...\n");
+            // Demande de l'API.
+            FaceAnalyse(imageFilePath);
+            //FaceCompare("51cb5321-1ca1-4618-a296-68cfe9699f69", "3edfa0ce-9a96-4004-99e9-d867f0dcc7dd");
 
                 // On attend que la reconnaissance faciale soit finie 
                 taskRecoFaciale.Wait();

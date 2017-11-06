@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // identificationVisuel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1236, 756);
+            this.Name = "identificationVisuel";
             this.Text = "identificationVisuel";
+            this.Load += new System.EventHandler(this.identificationVisuel_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
