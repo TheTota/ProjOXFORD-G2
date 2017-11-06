@@ -154,5 +154,31 @@ namespace ProjOXFORD_G2
                 throw new Exception("La requête n'a pu aboutir.");
             }
         }
+
+        /// <summary>
+        /// Méthode permettant de récupérer le code de l'utilisateur dans la base de données.
+        /// Ce mot de passe sera destiné à être comparé avec celui saisi dans le formulaire afin d'identifier l'utilisateur.
+        /// </summary>
+        /// <returns>Le code de l'utilisateur.</returns>
+        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
+        public int RecupPwd(int id)
+        {
+            this._requete = @"SELECT code FROM users WHERE id = @id;";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(this._requete, _connexion);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.CommandType = CommandType.Text;
+                var scalar = cmd.ExecuteScalar();
+                Console.WriteLine("Requête effectuée.");
+                FermerConnexion();
+                return Convert.ToInt32(scalar);
+            }
+            catch
+            {
+                FermerConnexion();
+                throw new Exception("La requête n'a pu aboutir.");
+            }
+        }
     }
 }
