@@ -582,7 +582,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pasca\\.nuget\\packages\\": {}
+    "C:\\Users\\LD\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -590,14 +591,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\pasca\\Source\\Repos\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "projectUniqueName": "C:\\Users\\LD\\Desktop\\Projet Recon\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
       "projectName": "ProjOXFORD-G2",
-      "projectPath": "C:\\Users\\pasca\\Source\\Repos\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
-      "packagesPath": "C:\\Users\\pasca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pasca\\Source\\Repos\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
+      "projectPath": "C:\\Users\\LD\\Desktop\\Projet Recon\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "packagesPath": "C:\\Users\\LD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LD\\Desktop\\Projet Recon\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pasca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LD\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -605,13 +609,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "H:\\2ème année\\SLAM 4": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net461": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {

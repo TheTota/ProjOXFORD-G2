@@ -31,3 +31,19 @@ C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microso
 C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Face.dll
 C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Newtonsoft.Json.dll
 C:\Users\pasca\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MySql.Data.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe.config
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.pdb
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\System.Net.Http.Extensions.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\System.Net.Http.Primitives.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Common.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Face.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MySql.Data.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Newtonsoft.Json.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.ProjOXFORD-G2.exe.config
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.CoreCompileInputs.cache
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.AssemblyInfoInputs.cache
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.AssemblyInfo.cs
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.pdb
