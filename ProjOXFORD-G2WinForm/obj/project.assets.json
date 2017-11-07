@@ -130,20 +130,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dream\\.nuget\\packages\\": {}
+    "C:\\Users\\leoto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
+      "projectUniqueName": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
       "projectName": "ProjOXFORD-G2WinForm",
-      "projectPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
-      "packagesPath": "C:\\Users\\Dream\\.nuget\\packages\\",
-      "outputPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\obj\\",
+      "projectPath": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
+      "packagesPath": "C:\\Users\\leoto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Dream\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leoto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -161,5 +161,31 @@ namespace ProjOXFORD_G2
                 throw new Exception("La requête n'a pu aboutir.");
             }
         }
+        /// <summary>
+        /// Méthode permétant de comparer deux mot de passe, mdp1 et mdp2, retourne true si les deux mdp sont bon et retourne false sinon.
+        /// Si l'utilisateur rate 3 fois sont mot de passe il est déconnecté
+        /// </summary>
+        /// <param name="mdp1"></param>
+        /// <param name="mdp2"></param>
+        /// <returns></returns>
+        public bool ComparePsw(int mdp1, int mdp2)
+        {
+            try
+            {
+                if (mdp1 == mdp2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                    throw new Exception("Mot de passe faux");
+                }
+            }
+            catch
+            {
+                throw new Exception("Echec");
+            }
+        }
     }
 }
