@@ -58,9 +58,12 @@ namespace ProjOXFORD_G2WinForm
             }
 
             Cam_Visuel1.GetCurrentImage().Save(cheminVersImageTemp);
-            Task<int> tempFaceCompare = ReconnaissanceFaciale.FaceRecCompareFaceAsync(cheminVersImageTemp);
-            //tempFaceCompare.Wait();
-            if(tempFaceCompare.Result >= 0.6)
+
+            Task<int> compareFace = ReconnaissanceFaciale.FaceRecCompareFaceAsync(cheminVersImageTemp);
+            compareFace.Wait();
+            MessageBox.Show(compareFace.Result.ToString());
+
+            if (tempFaceCompare.Result >= 0.6)
             {
                 MessageBox.Show("L'utilisateur à bien été reconnu !");
             }

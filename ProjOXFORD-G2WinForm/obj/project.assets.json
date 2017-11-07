@@ -100,7 +100,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -227,7 +227,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -354,7 +354,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -481,7 +481,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -798,14 +798,14 @@
         "tools/install.ps1"
       ]
     },
-    "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
-      "sha512": "7eBtbhGuxSVT4hudJzwzMURRe528xNdW1bEvTd+YpN4uGnMt71F8SYEwwOtX1PShYCKjU455GHt8rqVT4io7Uw==",
+    "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
+      "sha512": "KI3/fu4W0RObHQqqR+JZ4DqwWr/bKQEsh08dqA0TCDbIMVBUBB8Kpaibaxlp9DQ09ihScyqkCIrMRo/7oWANWA==",
       "type": "package",
-      "path": "webeye.controls.winforms.webcameracontrol/1.0.1",
+      "path": "webeye.controls.winforms.webcameracontrol/1.0.2",
       "files": [
         "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll",
         "lib/net20/WebEye.Controls.WinForms.WebCameraControl.pdb",
-        "webeye.controls.winforms.webcameracontrol.1.0.1.nupkg.sha512",
+        "webeye.controls.winforms.webcameracontrol.1.0.2.nupkg.sha512",
         "webeye.controls.winforms.webcameracontrol.nuspec"
       ]
     },
@@ -819,24 +819,24 @@
     ".NETFramework,Version=v4.6.1": [
       "MetroModernUI >= 1.4.0",
       "ProjOXFORD-G2 >= 1.0.0",
-      "WebEye.Controls.WinForms.WebCameraControl >= 1.0.1"
+      "WebEye.Controls.WinForms.WebCameraControl >= 1.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leoto\\.nuget\\packages\\": {}
+    "C:\\Users\\Dream\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
+      "projectUniqueName": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
       "projectName": "ProjOXFORD-G2WinForm",
-      "projectPath": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
-      "packagesPath": "C:\\Users\\leoto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\obj\\",
+      "projectPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\ProjOXFORD-G2WinForm.csproj",
+      "packagesPath": "C:\\Users\\Dream\\.nuget\\packages\\",
+      "outputPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2WinForm\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\leoto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dream\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -865,7 +865,7 @@
           },
           "WebEye.Controls.WinForms.WebCameraControl": {
             "target": "Package",
-            "version": "1.0.1"
+            "version": "1.0.2"
           }
         }
       }

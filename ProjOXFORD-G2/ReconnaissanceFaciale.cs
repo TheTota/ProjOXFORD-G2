@@ -25,8 +25,8 @@ namespace ProjOXFORD_G2
         public static void Main()
         {
             // Récupération du path de l'image
-            //Console.WriteLine("chemin de l'image svp : \n");
-            //string imageFilePath = Console.ReadLine();
+            Console.WriteLine("chemin de l'image svp : \n");
+            string imageFilePath = Console.ReadLine();
 
             //Task<string> faceAdd = FaceAddAsync(imageFilePath);
             //faceAdd.Wait();
@@ -36,7 +36,7 @@ namespace ProjOXFORD_G2
             //tempFaceAdd.Wait();
             //Console.WriteLine(tempFaceAdd.Result);
 
-            //Task<string> compareFace = FaceRecCompareFaceAsync(imageFilePath);
+            //Task<int> compareFace = FaceRecCompareFaceAsync(imageFilePath);
             //compareFace.Wait();
             //Console.WriteLine(compareFace.Result);
 

@@ -651,7 +651,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leoto\\.nuget\\packages\\": {}
+    "C:\\Users\\Dream\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -659,14 +659,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "projectUniqueName": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
       "projectName": "ProjOXFORD-G2",
-      "projectPath": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
-      "packagesPath": "C:\\Users\\leoto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leoto\\Documents\\Projet code\\[] projet\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
+      "projectPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2\\ProjOXFORD-G2.csproj",
+      "packagesPath": "C:\\Users\\Dream\\.nuget\\packages\\",
+      "outputPath": "D:\\Travail\\BTS SIO 2\\ProjOXFORD-G2\\ProjOXFORD-G2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\leoto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dream\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
