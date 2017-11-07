@@ -25,3 +25,7 @@ D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2W
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.exe
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.pdb
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationVisuel.resources
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationVisuel.resources
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationMDP.resources
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\WebEye.Controls.WinForms.WebCameraControl.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\WebEye.Controls.WinForms.WebCameraControl.pdb

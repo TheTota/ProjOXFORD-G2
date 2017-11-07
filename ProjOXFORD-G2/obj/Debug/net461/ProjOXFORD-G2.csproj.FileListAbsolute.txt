@@ -47,3 +47,6 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\Pr
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.AssemblyInfo.cs
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.exe
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.pdb
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Design.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Fonts.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.dll

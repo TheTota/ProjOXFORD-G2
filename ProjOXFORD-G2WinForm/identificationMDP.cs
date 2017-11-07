@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ProjOXFORD_G2WinForm
 {
-    public partial class identificationMDP : Form
+    public partial class identificationMDP : MetroFramework.Forms.MetroForm
     {
         public identificationMDP()
         {
             InitializeComponent();
+        }
+
+        private void identificationMDP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

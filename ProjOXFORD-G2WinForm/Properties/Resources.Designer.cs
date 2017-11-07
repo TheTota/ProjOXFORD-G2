@@ -79,5 +79,15 @@ namespace ProjOXFORD_G2WinForm.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoOxford {
+            get {
+                object obj = ResourceManager.GetObject("LogoOxford", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

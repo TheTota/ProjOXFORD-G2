@@ -80,11 +80,11 @@
             this.Txt_SousTitre1.AutoSize = true;
             this.Txt_SousTitre1.Font = new System.Drawing.Font("Roboto Lt", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_SousTitre1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.Txt_SousTitre1.Location = new System.Drawing.Point(234, 706);
+            this.Txt_SousTitre1.Location = new System.Drawing.Point(213, 697);
             this.Txt_SousTitre1.Name = "Txt_SousTitre1";
-            this.Txt_SousTitre1.Size = new System.Drawing.Size(798, 58);
+            this.Txt_SousTitre1.Size = new System.Drawing.Size(837, 58);
             this.Txt_SousTitre1.TabIndex = 3;
-            this.Txt_SousTitre1.Text = "APPUYER POUR VOUS AUTHENTIER";
+            this.Txt_SousTitre1.Text = "APPUYER POUR VOUS AUTHENTIFIER";
             this.Txt_SousTitre1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Txt_SousTitre1.Click += new System.EventHandler(this.label1_Click);
             // 

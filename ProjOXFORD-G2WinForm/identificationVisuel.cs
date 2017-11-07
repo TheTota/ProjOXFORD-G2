@@ -21,5 +21,20 @@ namespace ProjOXFORD_G2WinForm
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Titre2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
