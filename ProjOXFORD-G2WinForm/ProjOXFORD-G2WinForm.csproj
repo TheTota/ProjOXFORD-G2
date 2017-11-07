@@ -114,5 +114,11 @@
   <ItemGroup>
     <None Include="Resources\LogoOxford.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjOXFORD-G2\ProjOXFORD-G2.csproj">
+      <Project>{d8678d4b-05dc-4b0d-b31f-ecfb3fe15804}</Project>
+      <Name>ProjOXFORD-G2</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

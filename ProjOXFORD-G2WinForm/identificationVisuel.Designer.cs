@@ -95,6 +95,7 @@ namespace ProjOXFORD_G2WinForm
             this.Btn_VérifierVisuel.Text = "Vérifier";
             this.Btn_VérifierVisuel.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Btn_VérifierVisuel.UseSelectable = true;
+            this.Btn_VérifierVisuel.Click += new System.EventHandler(this.Btn_VérifierVisuel_Click);
             // 
             // Cam_Visuel1
             // 

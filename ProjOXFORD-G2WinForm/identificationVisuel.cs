@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebEye.Controls.WinForms.WebCameraControl;
+using ProjOXFORD_G2;
 
 namespace ProjOXFORD_G2WinForm
 {
     public partial class identificationVisuel : MetroFramework.Forms.MetroForm
     {
-
+        string cheminRacine = Environment.CurrentDirectory;
         List<WebCameraId> listCams;
 
         public identificationVisuel()
@@ -43,6 +44,31 @@ namespace ProjOXFORD_G2WinForm
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
             this.Hide();
+        }
+
+        private void Btn_VérifierVisuel_Click(object sender, EventArgs e)
+        {
+            //vérifie si le dossier temp existe sinon le créer 
+            string cheminVersDossierTemp = cheminRacine + "\\temp";
+            string cheminVersImageTemp = cheminVersDossierTemp + "\\capture.jpeg";
+
+            if (!System.IO.Directory.Exists(cheminVersDossierTemp))
+            {
+                System.IO.Directory.CreateDirectory(cheminVersDossierTemp);
+            }
+
+            Cam_Visuel1.GetCurrentImage().Save(cheminVersImageTemp);
+            Task<int> tempFaceCompare = ReconnaissanceFaciale.FaceRecCompareFaceAsync(cheminVersImageTemp);
+            //tempFaceCompare.Wait();
+            if(tempFaceCompare.Result >= 0.6)
+            {
+                MessageBox.Show("L'utilisateur à bien été reconnu !");
+            }
+            else
+            {
+                MessageBox.Show("Aucun utilisateur reconnu !");
+            }
+            //Console.WriteLine(tempFaceAdd.Result);
         }
     }
 }

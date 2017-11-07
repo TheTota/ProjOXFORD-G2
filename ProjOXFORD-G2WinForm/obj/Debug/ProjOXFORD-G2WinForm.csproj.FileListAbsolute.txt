@@ -32,3 +32,13 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\We
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\WebEye.Controls.WinForms.WebCameraControl.dll
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\WebEye.Controls.WinForms.WebCameraControl.pdb
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationMDP.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\System.Net.Http.Extensions.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\System.Net.Http.Primitives.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\Microsoft.ProjectOxford.Common.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\Microsoft.ProjectOxford.Face.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MySql.Data.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\Newtonsoft.Json.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2.exe
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2.exe.config
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.ProjOXFORD-G2WinForm.exe.config

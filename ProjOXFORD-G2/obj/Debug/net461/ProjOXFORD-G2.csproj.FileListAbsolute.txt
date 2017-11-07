@@ -50,3 +50,8 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\Pr
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Design.dll
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Fonts.dll
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Design.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Fonts.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MySql.Data.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\WebEye.Controls.WinForms.WebCameraControl.dll
