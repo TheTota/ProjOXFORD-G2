@@ -103,7 +103,6 @@ namespace ProjOXFORD_G2WinForm
             this.Cam_Visuel1.Name = "Cam_Visuel1";
             this.Cam_Visuel1.Size = new System.Drawing.Size(808, 511);
             this.Cam_Visuel1.TabIndex = 4;
-            this.Cam_Visuel1.Load += new System.EventHandler(this.Cam_Visuel1_Load);
             // 
             // List_Camera
             // 

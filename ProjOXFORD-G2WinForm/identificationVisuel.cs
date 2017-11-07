@@ -63,7 +63,7 @@ namespace ProjOXFORD_G2WinForm
             compareFace.Wait();
             MessageBox.Show(compareFace.Result.ToString());
 
-            if (tempFaceCompare.Result >= 0.6)
+            if (compareFace.Result >= 0.6)
             {
                 MessageBox.Show("L'utilisateur à bien été reconnu !");
             }

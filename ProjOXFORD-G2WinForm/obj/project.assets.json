@@ -100,7 +100,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -227,7 +227,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -354,7 +354,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -481,7 +481,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
+      "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll": {}
@@ -798,14 +798,14 @@
         "tools/install.ps1"
       ]
     },
-    "WebEye.Controls.WinForms.WebCameraControl/1.0.2": {
-      "sha512": "KI3/fu4W0RObHQqqR+JZ4DqwWr/bKQEsh08dqA0TCDbIMVBUBB8Kpaibaxlp9DQ09ihScyqkCIrMRo/7oWANWA==",
+    "WebEye.Controls.WinForms.WebCameraControl/1.0.1": {
+      "sha512": "7eBtbhGuxSVT4hudJzwzMURRe528xNdW1bEvTd+YpN4uGnMt71F8SYEwwOtX1PShYCKjU455GHt8rqVT4io7Uw==",
       "type": "package",
-      "path": "webeye.controls.winforms.webcameracontrol/1.0.2",
+      "path": "webeye.controls.winforms.webcameracontrol/1.0.1",
       "files": [
         "lib/net20/WebEye.Controls.WinForms.WebCameraControl.dll",
         "lib/net20/WebEye.Controls.WinForms.WebCameraControl.pdb",
-        "webeye.controls.winforms.webcameracontrol.1.0.2.nupkg.sha512",
+        "webeye.controls.winforms.webcameracontrol.1.0.1.nupkg.sha512",
         "webeye.controls.winforms.webcameracontrol.nuspec"
       ]
     },
@@ -818,8 +818,7 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
       "MetroModernUI >= 1.4.0",
-      "ProjOXFORD-G2 >= 1.0.0",
-      "WebEye.Controls.WinForms.WebCameraControl >= 1.0.2"
+      "ProjOXFORD-G2 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -862,10 +861,6 @@
           "MetroModernUI": {
             "target": "Package",
             "version": "1.4.0"
-          },
-          "WebEye.Controls.WinForms.WebCameraControl": {
-            "target": "Package",
-            "version": "1.0.2"
           }
         }
       }
