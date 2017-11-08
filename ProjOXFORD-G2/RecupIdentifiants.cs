@@ -70,27 +70,6 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
-        /// Méthode statique permettant d'exécuter la requete SQL 
-        /// enregistrée dans la variable requete.
-        /// Permet d'éviter la duplication de code.
-        /// </summary>
-        /// <param name="requete">Requête enregistrée.</param>
-        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
-        //public static void ExecuterRequete(string requete)
-        //{
-        //    try
-        //    {
-        //        MySqlCommand cmd = new MySqlCommand(requete, _connexion);
-        //        cmd.CommandType = CommandType.Text;
-        //        Console.WriteLine("Requête effectuée.");
-        //    }
-        //    catch
-        //    {
-        //        throw new Exception("La requête n'a pu aboutir.");
-        //    }
-        //}
-
-        /// <summary>
         /// Méthode de récupération de la photo.
         /// Destinée à l'affichage.
         /// </summary>
@@ -103,7 +82,6 @@ namespace ProjOXFORD_G2
                 cmd.CommandType = CommandType.Text;
                 var scalar = cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
                 Console.WriteLine("Requête effectuée.");
-                // ExecuterRequete(this._requete);
                 FermerConnexion();
             }
             catch
@@ -122,11 +100,10 @@ namespace ProjOXFORD_G2
             try
             {
                 MySqlCommand cmd = new MySqlCommand(this._requete, _connexion);
-                cmd.Parameters.AddWithValue("@faceid", "");   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
+                cmd.Parameters.AddWithValue("@faceid", string.Empty);   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
                 cmd.CommandType = CommandType.Text;
                 var reader = cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
                 Console.WriteLine("Requête effectuée.");
-                // ExecuterRequete(this._requete);
                 FermerConnexion();
             }
             catch
@@ -140,6 +117,7 @@ namespace ProjOXFORD_G2
         /// Méthode permettant de récupérer le code de l'utilisateur dans la base de données.
         /// Ce mot de passe sera destiné à être comparé avec celui saisi dans le formulaire afin d'identifier l'utilisateur.
         /// </summary>
+        /// <param name="id">Identifiant du propriétaire du code.</param>
         /// <returns>Le code de l'utilisateur.</returns>
         /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
         public int RecupPwd(int id)
@@ -161,13 +139,13 @@ namespace ProjOXFORD_G2
                 throw new Exception("La requête n'a pu aboutir.");
             }
         }
+
         /// <summary>
-        /// Méthode permétant de comparer deux mot de passe, mdp1 et mdp2, retourne true si les deux mdp sont bon et retourne false sinon.
-        /// Si l'utilisateur rate 3 fois sont mot de passe il est déconnecté
+        /// Méthode permettant de comparer deux mots de passe, mdp1 et mdp2.
         /// </summary>
-        /// <param name="mdp1"></param>
-        /// <param name="mdp2"></param>
-        /// <returns></returns>
+        /// <param name="mdp1">Mot de passe saisi par l'utilisateur.</param>
+        /// <param name="mdp2">Mot de passe stocké en base de données.</param>
+        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
         public bool ComparePsw(int mdp1, int mdp2)
         {
             try
@@ -179,7 +157,6 @@ namespace ProjOXFORD_G2
                 else
                 {
                     return false;
-                    throw new Exception("Mot de passe faux");
                 }
             }
             catch
