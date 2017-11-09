@@ -19,3 +19,23 @@ D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.AssemblyInfo.cs
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.exe
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.pdb
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\ProjOXFORD-G2.exe.config
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\ProjOXFORD-G2.exe
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\ProjOXFORD-G2.pdb
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\MetroFramework.Design.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\MetroFramework.Fonts.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\MetroFramework.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\System.Net.Http.Extensions.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\System.Net.Http.Primitives.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\Microsoft.ProjectOxford.Common.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\Microsoft.ProjectOxford.Face.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\MySql.Data.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\Newtonsoft.Json.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\WebEye.Controls.WinForms.WebCameraControl.dll
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.csproj.ProjOXFORD-G2.exe.config
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.csproj.CoreCompileInputs.cache
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.AssemblyInfoInputs.cache
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.AssemblyInfo.cs
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.exe
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.pdb
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache

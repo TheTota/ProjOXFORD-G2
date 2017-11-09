@@ -17,8 +17,8 @@ namespace ProjOXFORD_G2WinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new identification1());
-            Application.Run(new identificationMDP());
+            Application.Run(new identification1());
+            //Application.Run(new identificationMDP());
             //Application.Run(new identificationVisuel());
         }
     }

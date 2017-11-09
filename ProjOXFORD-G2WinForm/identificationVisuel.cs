@@ -59,19 +59,43 @@ namespace ProjOXFORD_G2WinForm
 
             Cam_Visuel1.GetCurrentImage().Save(cheminVersImageTemp);
 
-            Task<int> compareFace = ReconnaissanceFaciale.FaceRecCompareFaceAsync(cheminVersImageTemp);
-            compareFace.Wait();
-            MessageBox.Show(compareFace.Result.ToString());
+            //Appelle du test de l'image
+            TestImage(cheminVersImageTemp);
 
-            if (compareFace.Result >= 0.6)
+        }
+
+        private async void TestImage(string cheminVersImageTemp)
+        {
+            MessageBox.Show("méthode atteinte");
+
+            //Affichage sur le coté gauche de l'image de l'utilisateur 
+            string myLogo = System.IO.Path.Combine(Application.StartupPath, cheminVersImageTemp);
+            Bitmap bmp = new Bitmap(myLogo);
+            Img_identificationVisuelPreview.Image = bmp;
+
+            int compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(cheminVersImageTemp);
+
+            //Comparaison du retour
+            if (compareFace >= 0.6)
             {
                 MessageBox.Show("L'utilisateur à bien été reconnu !");
+                Form identificationVisuel = new identificationMDP();
+                identificationVisuel.Location = this.Location;
+                identificationVisuel.StartPosition = FormStartPosition.Manual;
+                identificationVisuel.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Aucun utilisateur reconnu !");
             }
-            //Console.WriteLine(tempFaceAdd.Result);
+
+            return;
+        }
+
+        private void Cam_Visuel1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

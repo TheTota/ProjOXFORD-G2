@@ -25,8 +25,8 @@ namespace ProjOXFORD_G2
         public static void Main()
         {
             // Récupération du path de l'image
-            Console.WriteLine("chemin de l'image svp : \n");
-            string imageFilePath = Console.ReadLine();
+            //Console.WriteLine("chemin de l'image svp : \n");
+            //string imageFilePath = Console.ReadLine();
 
             //Task<string> faceAdd = FaceAddAsync(imageFilePath);
             //faceAdd.Wait();
@@ -91,10 +91,11 @@ namespace ProjOXFORD_G2
         /// Compare un visage à la liste des faceId
         /// </summary>
         /// <param name="imageFilePath">Chemin de l'image à comparer.</param>
-        public static async Task<int> FaceRecCompareFaceAsync(string imageFilePath)
+        async public static Task<int> FaceRecCompareFaceAsync(string imageFilePath)
         {
             HttpClient client = new HttpClient();
             JObject data;
+
 
             // Entête de la demande.
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", clefOxford);
@@ -104,11 +105,10 @@ namespace ProjOXFORD_G2
 
             HttpResponseMessage response;
 
-            //Génère une image temporaire pour la reconnaissance
-            Task<string> tempFaceAdd = FaceRecCreateFaceIdTempAsync(imageFilePath);
-            tempFaceAdd.Wait();
+            //Génère une image temporaire pour la reconnaissance ICI PROBELEME
+            string tempFaceAdd = await FaceRecCreateFaceIdTempAsync(imageFilePath);
 
-            string faceId = tempFaceAdd.Result;
+            string faceId = tempFaceAdd;
 
             // Body de la requete
             string contentBefore = "{\"faceId\":\"" + faceId + "\",\"faceListId\":\"" + "oxford" + "\", \"maxNumOfCandidatesReturned\":1, \"mode\": \"matchPerson\"}";

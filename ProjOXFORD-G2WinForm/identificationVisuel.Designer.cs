@@ -38,7 +38,9 @@ namespace ProjOXFORD_G2WinForm
             this.Btn_VérifierVisuel = new MetroFramework.Controls.MetroButton();
             this.Cam_Visuel1 = new WebEye.Controls.WinForms.WebCameraControl.WebCameraControl();
             this.List_Camera = new System.Windows.Forms.ListBox();
+            this.Img_identificationVisuelPreview = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Img_LogoOX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img_identificationVisuelPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Titre2
@@ -87,7 +89,7 @@ namespace ProjOXFORD_G2WinForm
             // 
             this.Btn_VérifierVisuel.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Btn_VérifierVisuel.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.Btn_VérifierVisuel.Location = new System.Drawing.Point(23, 453);
+            this.Btn_VérifierVisuel.Location = new System.Drawing.Point(23, 599);
             this.Btn_VérifierVisuel.Name = "Btn_VérifierVisuel";
             this.Btn_VérifierVisuel.Size = new System.Drawing.Size(200, 50);
             this.Btn_VérifierVisuel.Style = MetroFramework.MetroColorStyle.Silver;
@@ -99,10 +101,11 @@ namespace ProjOXFORD_G2WinForm
             // 
             // Cam_Visuel1
             // 
-            this.Cam_Visuel1.Location = new System.Drawing.Point(354, 128);
+            this.Cam_Visuel1.Location = new System.Drawing.Point(345, 153);
             this.Cam_Visuel1.Name = "Cam_Visuel1";
-            this.Cam_Visuel1.Size = new System.Drawing.Size(808, 511);
+            this.Cam_Visuel1.Size = new System.Drawing.Size(830, 484);
             this.Cam_Visuel1.TabIndex = 4;
+            this.Cam_Visuel1.Load += new System.EventHandler(this.Cam_Visuel1_Load);
             // 
             // List_Camera
             // 
@@ -113,11 +116,21 @@ namespace ProjOXFORD_G2WinForm
             this.List_Camera.TabIndex = 5;
             this.List_Camera.SelectedIndexChanged += new System.EventHandler(this.List_Camera_SelectedIndexChanged);
             // 
+            // Img_identificationVisuelPreview
+            // 
+            this.Img_identificationVisuelPreview.Location = new System.Drawing.Point(23, 333);
+            this.Img_identificationVisuelPreview.Name = "Img_identificationVisuelPreview";
+            this.Img_identificationVisuelPreview.Size = new System.Drawing.Size(303, 234);
+            this.Img_identificationVisuelPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Img_identificationVisuelPreview.TabIndex = 6;
+            this.Img_identificationVisuelPreview.TabStop = false;
+            // 
             // identificationVisuel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 756);
+            this.Controls.Add(this.Img_identificationVisuelPreview);
             this.Controls.Add(this.List_Camera);
             this.Controls.Add(this.Cam_Visuel1);
             this.Controls.Add(this.Btn_VérifierVisuel);
@@ -127,6 +140,7 @@ namespace ProjOXFORD_G2WinForm
             this.Name = "identificationVisuel";
             this.Load += new System.EventHandler(this.identificationVisuel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Img_LogoOX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img_identificationVisuelPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +155,6 @@ namespace ProjOXFORD_G2WinForm
         private MetroFramework.Controls.MetroButton Btn_VérifierVisuel;
         private WebCameraControl Cam_Visuel1;
         private System.Windows.Forms.ListBox List_Camera;
+        private System.Windows.Forms.PictureBox Img_identificationVisuelPreview;
     }
 }
