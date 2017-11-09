@@ -91,7 +91,7 @@ namespace ProjOXFORD_G2
         /// Compare un visage à la liste des faceId
         /// </summary>
         /// <param name="imageFilePath">Chemin de l'image à comparer.</param>
-        async public static Task<int> FaceRecCompareFaceAsync(string imageFilePath)
+        async public static Task<int> FaceRecCompareFaceAsync(string faceId)
         {
             HttpClient client = new HttpClient();
             JObject data;
@@ -106,9 +106,8 @@ namespace ProjOXFORD_G2
             HttpResponseMessage response;
 
             //Génère une image temporaire pour la reconnaissance ICI PROBELEME
-            string tempFaceAdd = await FaceRecCreateFaceIdTempAsync(imageFilePath);
-
-            string faceId = tempFaceAdd;
+            //JObject tempFaceAdd = await FaceRecCreateFaceIdTempAsync(imageFilePath);
+            //string faceId = Convert.ToString(tempFaceAdd.GetValue("faceId"));
 
             // Body de la requete
             string contentBefore = "{\"faceId\":\"" + faceId + "\",\"faceListId\":\"" + "oxford" + "\", \"maxNumOfCandidatesReturned\":1, \"mode\": \"matchPerson\"}";
@@ -143,7 +142,7 @@ namespace ProjOXFORD_G2
         /// Créer un faceId temporaire avec le chemin d'une image
         /// </summary>
         /// <param name="imageFilePath">Chemin de l'image.</param>
-        public static async Task<string> FaceRecCreateFaceIdTempAsync(string imageFilePath)
+        public static async Task<JObject> FaceRecCreateFaceIdTempAsync(string imageFilePath)
         {
             HttpClient client = new HttpClient();
             JObject data;
@@ -174,9 +173,16 @@ namespace ProjOXFORD_G2
                 string contentString = await response.Content.ReadAsStringAsync();
                 contentString = contentString.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
 
-                data = JObject.Parse(JsonPrettyPrint(contentString));
+                if (contentString == "")
+                {
+                    throw new Exception("Aucun visage détécté ! ");
+                }
+                else
+                {
+                    data = JObject.Parse(JsonPrettyPrint(contentString));
+                }
 
-                return Convert.ToString(data.GetValue("faceId"));
+                return data;
             }
         }
 

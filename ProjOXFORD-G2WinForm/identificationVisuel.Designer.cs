@@ -39,8 +39,14 @@ namespace ProjOXFORD_G2WinForm
             this.Cam_Visuel1 = new WebEye.Controls.WinForms.WebCameraControl.WebCameraControl();
             this.List_Camera = new System.Windows.Forms.ListBox();
             this.Img_identificationVisuelPreview = new System.Windows.Forms.PictureBox();
+            this.Load_identificationVisuel = new MetroFramework.Controls.MetroProgressSpinner();
+            this.Txt_chargementMetro = new MetroFramework.Controls.MetroLabel();
+            this.Lbl_infoutilisateur = new System.Windows.Forms.Label();
+            this.Img_previewUserReconnu = new System.Windows.Forms.PictureBox();
+            this.Btn_continuerToMdp = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.Img_LogoOX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Img_identificationVisuelPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img_previewUserReconnu)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Titre2
@@ -105,7 +111,6 @@ namespace ProjOXFORD_G2WinForm
             this.Cam_Visuel1.Name = "Cam_Visuel1";
             this.Cam_Visuel1.Size = new System.Drawing.Size(830, 484);
             this.Cam_Visuel1.TabIndex = 4;
-            this.Cam_Visuel1.Load += new System.EventHandler(this.Cam_Visuel1_Load);
             // 
             // List_Camera
             // 
@@ -125,11 +130,64 @@ namespace ProjOXFORD_G2WinForm
             this.Img_identificationVisuelPreview.TabIndex = 6;
             this.Img_identificationVisuelPreview.TabStop = false;
             // 
+            // Load_identificationVisuel
+            // 
+            this.Load_identificationVisuel.Location = new System.Drawing.Point(491, 185);
+            this.Load_identificationVisuel.Maximum = 100;
+            this.Load_identificationVisuel.Name = "Load_identificationVisuel";
+            this.Load_identificationVisuel.Size = new System.Drawing.Size(368, 350);
+            this.Load_identificationVisuel.TabIndex = 7;
+            this.Load_identificationVisuel.UseSelectable = true;
+            // 
+            // Txt_chargementMetro
+            // 
+            this.Txt_chargementMetro.AutoSize = true;
+            this.Txt_chargementMetro.Location = new System.Drawing.Point(575, 548);
+            this.Txt_chargementMetro.Name = "Txt_chargementMetro";
+            this.Txt_chargementMetro.Size = new System.Drawing.Size(193, 19);
+            this.Txt_chargementMetro.TabIndex = 8;
+            this.Txt_chargementMetro.Text = "IDENTIFICATION DE LA PHOTO";
+            // 
+            // Lbl_infoutilisateur
+            // 
+            this.Lbl_infoutilisateur.AutoSize = true;
+            this.Lbl_infoutilisateur.Font = new System.Drawing.Font("Roboto Cn", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_infoutilisateur.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_infoutilisateur.Location = new System.Drawing.Point(20, 211);
+            this.Lbl_infoutilisateur.Name = "Lbl_infoutilisateur";
+            this.Lbl_infoutilisateur.Size = new System.Drawing.Size(63, 25);
+            this.Lbl_infoutilisateur.TabIndex = 10;
+            this.Lbl_infoutilisateur.Text = "label1";
+            // 
+            // Img_previewUserReconnu
+            // 
+            this.Img_previewUserReconnu.Location = new System.Drawing.Point(345, 153);
+            this.Img_previewUserReconnu.Name = "Img_previewUserReconnu";
+            this.Img_previewUserReconnu.Size = new System.Drawing.Size(830, 484);
+            this.Img_previewUserReconnu.TabIndex = 11;
+            this.Img_previewUserReconnu.TabStop = false;
+            // 
+            // Btn_continuerToMdp
+            // 
+            this.Btn_continuerToMdp.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Btn_continuerToMdp.Location = new System.Drawing.Point(345, 662);
+            this.Btn_continuerToMdp.Name = "Btn_continuerToMdp";
+            this.Btn_continuerToMdp.Size = new System.Drawing.Size(830, 69);
+            this.Btn_continuerToMdp.TabIndex = 12;
+            this.Btn_continuerToMdp.Text = "Continuer";
+            this.Btn_continuerToMdp.UseSelectable = true;
+            this.Btn_continuerToMdp.Click += new System.EventHandler(this.Btn_continuerToMdp_Click);
+            // 
             // identificationVisuel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 756);
+            this.Controls.Add(this.Btn_continuerToMdp);
+            this.Controls.Add(this.Img_previewUserReconnu);
+            this.Controls.Add(this.Lbl_infoutilisateur);
+            this.Controls.Add(this.Txt_chargementMetro);
+            this.Controls.Add(this.Load_identificationVisuel);
             this.Controls.Add(this.Img_identificationVisuelPreview);
             this.Controls.Add(this.List_Camera);
             this.Controls.Add(this.Cam_Visuel1);
@@ -141,6 +199,7 @@ namespace ProjOXFORD_G2WinForm
             this.Load += new System.EventHandler(this.identificationVisuel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Img_LogoOX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Img_identificationVisuelPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img_previewUserReconnu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +215,10 @@ namespace ProjOXFORD_G2WinForm
         private WebCameraControl Cam_Visuel1;
         private System.Windows.Forms.ListBox List_Camera;
         private System.Windows.Forms.PictureBox Img_identificationVisuelPreview;
+        private MetroFramework.Controls.MetroProgressSpinner Load_identificationVisuel;
+        private MetroFramework.Controls.MetroLabel Txt_chargementMetro;
+        private System.Windows.Forms.Label Lbl_infoutilisateur;
+        private System.Windows.Forms.PictureBox Img_previewUserReconnu;
+        private MetroFramework.Controls.MetroButton Btn_continuerToMdp;
     }
 }

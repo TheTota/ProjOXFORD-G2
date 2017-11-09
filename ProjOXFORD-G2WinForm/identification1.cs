@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjOXFORD_G2WinForm;
+using System.IO;
 
 namespace ProjOXFORD_G2WinForm
 {
@@ -66,6 +67,13 @@ namespace ProjOXFORD_G2WinForm
 
         private void GoToIdentificationVisuel()
         {
+            string cheminVersDossierTemp = Environment.CurrentDirectory + "\\temp";
+            //Créer le dossier temporaire si il n'existe
+            if (!System.IO.Directory.Exists(cheminVersDossierTemp))
+            {
+                Directory.CreateDirectory(cheminVersDossierTemp);
+            }
+
             Form identificationVisuel = new identificationVisuel();
             identificationVisuel.Location = this.Location;
             identificationVisuel.StartPosition = FormStartPosition.Manual;

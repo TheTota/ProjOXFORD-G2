@@ -132,7 +132,7 @@ namespace ProjOXFORD_G2WinForm
             identificationVisuel.Location = this.Location;
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

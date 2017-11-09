@@ -1,30 +1,3 @@
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2WinForm.exe.config
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2WinForm.exe
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2WinForm.pdb
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MetroFramework.Design.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MetroFramework.Fonts.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MetroFramework.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\System.Net.Http.Extensions.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\System.Net.Http.Primitives.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\Microsoft.ProjectOxford.Common.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\Microsoft.ProjectOxford.Face.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MySql.Data.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\Newtonsoft.Json.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\WebEye.Controls.WinForms.WebCameraControl.dll
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\WebEye.Controls.WinForms.WebCameraControl.pdb
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.exe
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.pdb
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.exe.config
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csprojResolveAssemblyReference.cache
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.ProjOXFORD-G2WinForm.exe.config
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identification1.resources
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identificationMDP.resources
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identificationVisuel.resources
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.Properties.Resources.resources
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.GenerateResource.Cache
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.CoreCompileInputs.cache
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.exe
-D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.pdb
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csprojResolveAssemblyReference.cache
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.ProjOXFORD-G2WinForm.exe.config
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identification1.resources
@@ -52,3 +25,30 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.exe
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.pdb
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.exe.config
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2WinForm.exe.config
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2WinForm.exe
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2WinForm.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MetroFramework.Design.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MetroFramework.Fonts.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MetroFramework.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\System.Net.Http.Extensions.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\System.Net.Http.Primitives.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\Microsoft.ProjectOxford.Common.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\Microsoft.ProjectOxford.Face.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\MySql.Data.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\Newtonsoft.Json.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\WebEye.Controls.WinForms.WebCameraControl.dll
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\WebEye.Controls.WinForms.WebCameraControl.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.exe
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.pdb
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Release\ProjOXFORD-G2.exe.config
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csprojResolveAssemblyReference.cache
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.ProjOXFORD-G2WinForm.exe.config
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identification1.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identificationMDP.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.identificationVisuel.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD_G2WinForm.Properties.Resources.resources
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.GenerateResource.Cache
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.csproj.CoreCompileInputs.cache
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.exe
+D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Release\ProjOXFORD-G2WinForm.pdb

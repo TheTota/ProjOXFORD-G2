@@ -9,12 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebEye.Controls.WinForms.WebCameraControl;
 using ProjOXFORD_G2;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace ProjOXFORD_G2WinForm
 {
     public partial class identificationVisuel : MetroFramework.Forms.MetroForm
     {
+        //Chemin vers la racine du programme
         string cheminRacine = Environment.CurrentDirectory;
+        string cheminVersDossierTemp;
+
+        //Liste des caméras
         List<WebCameraId> listCams;
 
         public identificationVisuel()
@@ -24,12 +31,42 @@ namespace ProjOXFORD_G2WinForm
 
         private void identificationVisuel_Load(object sender, EventArgs e)
         {
+            Load_identificationVisuel.Hide();
+            Txt_chargementMetro.Hide();
+            Lbl_infoutilisateur.Hide();
+            Img_previewUserReconnu.Hide();
+            Btn_continuerToMdp.Hide();
+            Btn_continuerToMdp.Enabled = false;
+
+            //Chemin vers le dossier temporaire de l'application
+            cheminVersDossierTemp = cheminRacine + "\\temp";
+
+            //Liste les caméras
             listCams = Cam_Visuel1.GetVideoCaptureDevices().ToList<WebCameraId>();
 
             foreach (WebCameraId camera in listCams)
             {
                  List_Camera.Items.Add(camera.Name);
             }
+
+            List_Camera.SelectedIndex = 0;
+
+            try
+            {
+                Cam_Visuel1.StartCapture(listCams[0]);
+            }catch(Exception)
+            {
+                MessageBox.Show("Aucune camera détécté !", "ATTENTION !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //Créer le dossier temporaire si il n'existe
+            if (!System.IO.Directory.Exists(cheminVersDossierTemp))
+            {
+                Directory.CreateDirectory(cheminVersDossierTemp);
+            }
+
+            //Supprime le cache
+            removeCache();
         }
 
         private void List_Camera_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,19 +80,13 @@ namespace ProjOXFORD_G2WinForm
             identificationVisuel.Location = this.Location;
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Btn_VérifierVisuel_Click(object sender, EventArgs e)
         {
             //vérifie si le dossier temp existe sinon le créer 
-            string cheminVersDossierTemp = cheminRacine + "\\temp";
-            string cheminVersImageTemp = cheminVersDossierTemp + "\\capture.jpeg";
-
-            if (!System.IO.Directory.Exists(cheminVersDossierTemp))
-            {
-                System.IO.Directory.CreateDirectory(cheminVersDossierTemp);
-            }
+            string cheminVersImageTemp = cheminVersDossierTemp + "\\capture" + DateTimeOffset.Now.ToUnixTimeSeconds() + ".jpeg";
 
             Cam_Visuel1.GetCurrentImage().Save(cheminVersImageTemp);
 
@@ -66,36 +97,124 @@ namespace ProjOXFORD_G2WinForm
 
         private async void TestImage(string cheminVersImageTemp)
         {
-            MessageBox.Show("méthode atteinte");
+            Load_identificationVisuel.Show();
+            Txt_chargementMetro.Show();
+            Btn_RetourVisuel.Enabled = false;
+            Btn_VérifierVisuel.Enabled = false;
+            Cam_Visuel1.StopCapture();
 
             //Affichage sur le coté gauche de l'image de l'utilisateur 
-            string myLogo = System.IO.Path.Combine(Application.StartupPath, cheminVersImageTemp);
-            Bitmap bmp = new Bitmap(myLogo);
+            string imgPrev = System.IO.Path.Combine(Application.StartupPath, cheminVersImageTemp);
+            Bitmap bmp = new Bitmap(imgPrev);
             Img_identificationVisuelPreview.Image = bmp;
+            Img_previewUserReconnu.Image = bmp;
 
-            int compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(cheminVersImageTemp);
-
-            //Comparaison du retour
-            if (compareFace >= 0.6)
+            try
             {
-                MessageBox.Show("L'utilisateur à bien été reconnu !");
-                Form identificationVisuel = new identificationMDP();
-                identificationVisuel.Location = this.Location;
-                identificationVisuel.StartPosition = FormStartPosition.Manual;
-                identificationVisuel.Show();
-                this.Hide();
+                JObject resultatPhotoTemporaire = await ReconnaissanceFaciale.FaceRecCreateFaceIdTempAsync(cheminVersImageTemp);
+
+                string faceId = Convert.ToString(resultatPhotoTemporaire.GetValue("faceId"));
+
+                int compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(faceId);
+
+                reloadPage();
+
+                //Comparaison du retour
+
+                //Si le visage à été reconnu
+                if (compareFace >= 0.6)
+                {
+                    Cam_Visuel1.Hide();
+                    Img_previewUserReconnu.Show();
+                    Img_identificationVisuelPreview.Hide();
+
+
+                    MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU",MessageBoxButtons.OK,MessageBoxIcon.Question);
+                    affichageInfoVisage(resultatPhotoTemporaire);
+
+                    Btn_continuerToMdp.Show();
+                    Btn_continuerToMdp.Enabled = true;
+                }
+                //Si le visage n'a pas été reconnu
+                else
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Aucun utilisateur reconnu !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Aucun utilisateur reconnu !");
+                MetroFramework.MetroMessageBox.Show(this, "ERREUR : " + ex.Message, "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error & MessageBoxIcon.Stop);
+                reloadPage();
             }
 
             return;
         }
 
-        private void Cam_Visuel1_Load(object sender, EventArgs e)
+        private void reloadPage()
         {
+            Load_identificationVisuel.Hide();
+            Txt_chargementMetro.Hide();
+            Btn_RetourVisuel.Enabled = true;
+            Btn_VérifierVisuel.Enabled = true;
+            Cam_Visuel1.StartCapture(listCams[List_Camera.SelectedIndex]);
+        }
 
+        private void removeCache()
+        {
+            DirectoryInfo di = new DirectoryInfo(cheminVersDossierTemp);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                try
+                {
+                    file.Delete();
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                try
+                {
+                    dir.Delete(true);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
+        }
+
+        private void affichageInfoVisage(JObject Infos)
+        {
+            Lbl_infoutilisateur.Show();
+
+            string smile = (string)Infos["faceAttributes"]["smile"];
+            string gender = (string)Infos["faceAttributes"]["gender"];
+            string age = (string)Infos["faceAttributes"]["age"];
+            string moustache = (string)Infos["faceAttributes"]["facialHair"]["moustache"];
+            string beard = (string)Infos["faceAttributes"]["facialHair"]["beard"];
+            string sideburns = (string)Infos["faceAttributes"]["facialHair"]["sideburns"];
+            string glasses = (string)Infos["faceAttributes"]["glasses"];
+
+            Lbl_infoutilisateur.Text = "Sourir : " + smile + "\n";
+            Lbl_infoutilisateur.Text += "Genre : " + gender + "\n";
+            Lbl_infoutilisateur.Text += "Age : " + age + "\n";
+            Lbl_infoutilisateur.Text += "moustache : " + moustache + "\n";
+            Lbl_infoutilisateur.Text += "beard : " + beard + "\n";
+            Lbl_infoutilisateur.Text += "sideburns : " + sideburns + "\n";
+            Lbl_infoutilisateur.Text += "glasses : " + glasses + "\n";
+        }
+
+        private void Btn_continuerToMdp_Click(object sender, EventArgs e)
+        {
+            Form identificationVisuel = new identificationMDP();
+            identificationVisuel.Location = this.Location;
+            identificationVisuel.StartPosition = FormStartPosition.Manual;
+            identificationVisuel.Show();
+            this.Close();
         }
     }
 }
