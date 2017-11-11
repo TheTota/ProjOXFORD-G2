@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;  // Librairie de connexion à MySQL ajoutée en référence.
+//// Ne pas oublier d'installer le connecteur .Net pour MySQl qui se trouve dans ProjOXFORD-G2\ProjOXFORD-G2\Ressources\
 
 namespace ProjOXFORD_G2
 {
@@ -36,6 +37,12 @@ namespace ProjOXFORD_G2
         /// Membre privé qui va contenir la requête.
         /// </summary>
         private static string _requete;
+
+        /// <summary>
+        /// Déclaration d'un objet de la classe MySqlCommand.
+        /// Permet d'exécuter une requête, récupérer le résultat de la requête, et d'exécuter une procédure stockée.
+        /// </summary>
+        private static MySqlCommand cmd;
 
         /// <summary>
         /// Méthode de connexion à la base de données.
@@ -71,6 +78,18 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
+        /// Méthode permettant de renvoyer une erreur.
+        /// Ecrite pour éviter la réécriture de code.
+        /// </summary>
+        /// <param name="ex">Exception qui sera retournée.</param>
+        /// <returns>Erreur d'exécution de la requête.</returns>
+        public static Exception RenvoyerErreur(Exception ex)
+        {
+            FermerConnexion();
+            throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+        }
+
+        /// <summary>
         /// Méthode de récupération de la photo.
         /// Destinée à l'affichage
         /// </summary>
@@ -81,7 +100,7 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                MySqlCommand cmd = new MySqlCommand(_requete, _connexion)
+                cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
@@ -91,21 +110,21 @@ namespace ProjOXFORD_G2
             }
             catch (Exception ex)
             {
-                FermerConnexion();
-                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+                RenvoyerErreur(ex);
             }
         }
 
         /// <summary>
         /// Méthode de récupération des informations de l'utilisateur.
         /// </summary>
-        public static void RecupInfosUser()
+        /// <returns>Un jeu d'enregistrement concernant la personne à qui appartient le faceid.</returns>
+        public static MySqlDataReader RecupInfosUser()
         {
             _requete = @"SELECT photo, nom, prenom, type, birth, sexe, status, email FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceid;";
             try
             {
                 OuvrirConnexion();
-                MySqlCommand cmd = new MySqlCommand(_requete, _connexion)
+                cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
@@ -135,7 +154,7 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                MySqlCommand cmd = new MySqlCommand(_requete, _connexion)
+                cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
@@ -185,7 +204,7 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                MySqlCommand cmd = new MySqlCommand(_requete, _connexion)
+                cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
@@ -198,8 +217,7 @@ namespace ProjOXFORD_G2
             }
             catch (Exception ex)
             {
-                FermerConnexion();
-                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+                RenvoyerErreur(ex);
             }
         }
 
@@ -217,8 +235,7 @@ namespace ProjOXFORD_G2
             }
             catch (Exception ex)
             {
-                FermerConnexion();
-                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+                RenvoyerErreur(ex);
             }
         }
 
@@ -237,8 +254,7 @@ namespace ProjOXFORD_G2
             }
             catch (Exception ex)
             {
-                FermerConnexion();
-                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+                RenvoyerErreur(ex);
             }
         }
 
@@ -256,8 +272,7 @@ namespace ProjOXFORD_G2
             }
             catch (Exception ex)
             {
-                FermerConnexion();
-                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+                RenvoyerErreur(ex);
             }
         }
     }
