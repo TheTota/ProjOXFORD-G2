@@ -142,15 +142,15 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
-        /// Méthode permettant de récupérer le code de l'utilisateur dans la base de données.
-        /// Ce mot de passe sera destiné à être comparé avec celui saisi dans le formulaire afin d'identifier l'utilisateur.
+        /// Méthode permettant de comparer le mot de passe enregistré en BDD avec celui saisi dasn le formulaire.
         /// </summary>
-        /// <param name="id">Identifiant du propriétaire du code.</param>
-        /// <returns>Le code de l'utilisateur.</returns>
+        /// <param name="idUtilisateur">Utilisateur qui a saisi son code dans le formulaire.</param>
+        /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire par l'utilisateur.</param>
+        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
         /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
-        public static int RecupPwd(int id)
+        public static bool CompareMdp(int idUtilisateur, int mdpSaisi)
         {
-            _requete = @"SELECT code FROM users WHERE id = @id;";
+            _requete = @"SELECT code FROM users WHERE id = @idutilisateur;";
             try
             {
                 OuvrirConnexion();
@@ -158,34 +158,24 @@ namespace ProjOXFORD_G2
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@idutilisateur", idUtilisateur);
                 var scalar = cmd.ExecuteScalar();
-                Console.WriteLine("Requête effectuée.");
-                FermerConnexion();
-                return Convert.ToInt32(scalar);
+                int code = Convert.ToInt32(scalar);
+
+                //// Teste si le code enregistré en BDD de l'utilisateur ecorrespond avec celui saisi dans le formulaire.
+                if (code == mdpSaisi)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {
                 FermerConnexion();
                 throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Méthode permettant de comparer deux mots de passe, mdp1 et mdp2.
-        /// </summary>
-        /// <param name="mdp1">Mot de passe saisi par l'utilisateur.</param>
-        /// <param name="mdp2">Mot de passe stocké en base de données.</param>
-        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
-        public static bool ComparePsw(int mdp1, int mdp2)
-        {
-            if (mdp1 == mdp2)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
@@ -247,7 +237,6 @@ namespace ProjOXFORD_G2
         /// <exception cref="Exception">La requête n'a pu aboutir.\n" + ex.Message</exception>
         public static void EventInfo(int utilisateur, string valeur)
         {
-            _requete = @"INSERT INTO events(user, category, date, value) VALUES (@utilisateur, @categorie, @date, @valeur);";
             try
             {
                 CreerEvent(utilisateur, 2, valeur);
