@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
 
 namespace ProjOXFORD_G2
 {
@@ -122,7 +123,7 @@ namespace ProjOXFORD_G2
             // Téléchargement du JSON de réponse.
             string contentString = await response.Content.ReadAsStringAsync();
             contentString = contentString.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
-            if(contentString != "")
+            if (contentString != "")
             {
                 data = JObject.Parse(JsonPrettyPrint(contentString));
             }
@@ -265,6 +266,43 @@ namespace ProjOXFORD_G2
             }
 
             return sb.ToString().Trim();
+        }
+
+        /// <summary>
+        /// envois un Mail d'erreur au RSSI quand une personne tente de s'authentifier sans que ce sois vraiment elle.
+        /// </summary>
+        /// <param name="Image"> chemin de l'image</param>
+        /// <exception cref="Exception"></exception>
+        public static void MailErreur(string Image)
+        {
+            //Addresse Expediteur/receveur
+            MailAddress From = new MailAddress("Expediteur@mail.com", "Nom Prénom"); /* mail de l'expéditeur (a renseigner)*/
+            MailAddress To = new MailAddress("receveur@mail.com", "Nom Prénom"); /* Mail du receveur (a renseigner)*/
+
+            //Contenant du message
+            MailMessage message = new MailMessage(From, To)
+            {
+                Subject = "Erreur d'authentification",
+                Body = "Cette personne à tenté de s'authentifier sans succès"
+            };
+
+            //Renseignement de la pièce jointe
+            Attachment data = new Attachment(Image);
+            message.Attachments.Add(data);
+
+            //serveur SMTP
+            SmtpClient client = new SmtpClient("Leserveur"); /* renseinger le serveur smtp */
+
+            try
+            {
+                //Envois du message
+                client.Send(message);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+
         }
     }
 }
