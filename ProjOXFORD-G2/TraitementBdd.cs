@@ -19,7 +19,7 @@ namespace ProjOXFORD_G2
     /// <summary>
     /// Classe qui va permettre la récupération des identifiants liés à la photo prise.
     /// </summary>
-    public class TraitementBdd
+    public static class TraitementBdd
     {
         /// <summary>
         /// Membre privé contenant les informations de connexion à la base de données.
@@ -142,15 +142,14 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
-        /// Méthode permettant de comparer le mot de passe enregistré en BDD avec celui saisi dasn le formulaire.
+        /// Méthode permettant de récupérer le mot de passe enregistré en BDD avec celui saisi dasn le formulaire.
         /// </summary>
-        /// <param name="faceId">Face ID de l'utilisateur qui a saisi son code dans le formulaire.</param>
         /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire par l'utilisateur.</param>
-        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
+        /// <returns>Le mot de passe récupéré en base de données.</returns>
         /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
-        public static bool CompareMdp(string faceId, int mdpSaisi)
+        public static int RecupMdp(string faceId)
         {
-            _requete = @"SELECT code FROM users INNER JOIN photo ON users.photo = photo.id WHERE faceid = @faceId;";
+            _requete = @"SELECT code FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceId;";
             try
             {
                 OuvrirConnexion();
@@ -160,17 +159,7 @@ namespace ProjOXFORD_G2
                 };
                 cmd.Parameters.AddWithValue("@faceId", faceId);
                 var scalar = cmd.ExecuteScalar();
-                int code = Convert.ToInt32(scalar);
-
-                //// Teste si le code enregistré en BDD de l'utilisateur ecorrespond avec celui saisi dans le formulaire.
-                if (code == mdpSaisi)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return Convert.ToInt32(scalar);
             }
             catch (Exception ex)
             {

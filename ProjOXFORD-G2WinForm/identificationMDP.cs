@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjOXFORD_G2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -133,6 +134,24 @@ namespace ProjOXFORD_G2WinForm
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
             this.Close();
+        }
+
+        /// <summary>
+        /// Compare le mot de passe récupéré en BDD avec celui saisir par l'utilisateur dans le formulaire.
+        /// </summary>
+        /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire.</param>
+        /// <param name="faceId">Face ID pour lequel le mot de passe ca être récupéré.</param>
+        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
+        public static bool CompareMdp(int mdpSaisi, string faceId)
+        {
+            if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
