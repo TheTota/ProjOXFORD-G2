@@ -144,13 +144,13 @@ namespace ProjOXFORD_G2
         /// <summary>
         /// Méthode permettant de comparer le mot de passe enregistré en BDD avec celui saisi dasn le formulaire.
         /// </summary>
-        /// <param name="idUtilisateur">Utilisateur qui a saisi son code dans le formulaire.</param>
+        /// <param name="faceId">Face ID de l'utilisateur qui a saisi son code dans le formulaire.</param>
         /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire par l'utilisateur.</param>
         /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
         /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
-        public static bool CompareMdp(int idUtilisateur, int mdpSaisi)
+        public static bool CompareMdp(string faceId, int mdpSaisi)
         {
-            _requete = @"SELECT code FROM users WHERE id = @idutilisateur;";
+            _requete = @"SELECT code FROM users INNER JOIN photo ON users.photo = photo.id WHERE faceid = @faceId;";
             try
             {
                 OuvrirConnexion();
@@ -158,7 +158,7 @@ namespace ProjOXFORD_G2
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@idutilisateur", idUtilisateur);
+                cmd.Parameters.AddWithValue("@faceId", faceId);
                 var scalar = cmd.ExecuteScalar();
                 int code = Convert.ToInt32(scalar);
 
