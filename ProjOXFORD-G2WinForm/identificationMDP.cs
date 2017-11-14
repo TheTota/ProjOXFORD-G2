@@ -8,19 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjOXFORD_G2;
 
 namespace ProjOXFORD_G2WinForm
 {
     public partial class identificationMDP : MetroFramework.Forms.MetroForm
     {
-        public identificationMDP()
+        string faceIdaTester;
+
+        public identificationMDP(string faceId)
         {
+            faceIdaTester = faceId;
             InitializeComponent();
         }
 
+        
+
         private void identificationMDP_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(faceIdaTester);
         }
 
         /// <summary>

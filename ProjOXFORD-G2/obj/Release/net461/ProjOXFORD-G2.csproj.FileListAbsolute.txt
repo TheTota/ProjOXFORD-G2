@@ -17,7 +17,6 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.AssemblyInfo.cs
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.exe
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.pdb
-C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\ProjOXFORD-G2.exe.config
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\ProjOXFORD-G2.runtimeconfig.json
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\bin\Release\net461\ProjOXFORD-G2.runtimeconfig.dev.json
@@ -38,3 +37,4 @@ D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.AssemblyInfo.cs
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.exe
 D:\Travail\BTS SIO 2\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.pdb
+C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Release\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache

@@ -11,6 +11,7 @@ using System.Net.Mail;
 
 namespace ProjOXFORD_G2
 {
+
     public class ReconnaissanceFaciale
     {
 
@@ -22,6 +23,7 @@ namespace ProjOXFORD_G2
         const string uriBaseVerify = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/verify";
         const string uriFaceAdd = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/facelists/oxford/persistedFaces";
         const string uriFaceCompare = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars";
+
 
         public static void Main()
         {
@@ -44,6 +46,8 @@ namespace ProjOXFORD_G2
 
 
             //Console.ReadLine();
+
+            MailErreur("C:\\Users\\LD\\Pictures\\Camera Roll\\zbeubzbeub.jpg");
 
         }
 
@@ -92,7 +96,7 @@ namespace ProjOXFORD_G2
         /// Compare un visage à la liste des faceId
         /// </summary>
         /// <param name="imageFilePath">Chemin de l'image à comparer.</param>
-        async public static Task<int> FaceRecCompareFaceAsync(string faceId)
+        async public static Task<JObject> FaceRecCompareFaceAsync(string faceId)
         {
             HttpClient client = new HttpClient();
             JObject data;
@@ -129,13 +133,14 @@ namespace ProjOXFORD_G2
             }
             else
             {
-                return 0;
+                return null;
             }
 
             // Converti en objet java 
             //data = JObject.Parse(JsonPrettyPrint(contentString));
 
-            return Convert.ToInt16(data.GetValue("confidence"));
+            return data;
+            //Convert.ToString(data.GetValue("faceId"));
         }
 
 
@@ -273,32 +278,41 @@ namespace ProjOXFORD_G2
         /// </summary>
         /// <param name="Image"> chemin de l'image</param>
         /// <exception cref="Exception"></exception>
-        public static void MailErreur(string Image)
+        public static void MailErreur(string photopath)
         {
-            //Addresse Expediteur/receveur
-            MailAddress From = new MailAddress("Expediteur@mail.com", "Nom Prénom"); /* mail de l'expéditeur (a renseigner)*/
-            MailAddress To = new MailAddress("receveur@mail.com", "Nom Prénom"); /* Mail du receveur (a renseigner)*/
-
-            //Contenant du message
-            MailMessage message = new MailMessage(From, To)
-            {
-                Subject = "Erreur d'authentification",
-                Body = "Cette personne à tenté de s'authentifier sans succès"
-            };
-
-            //Renseignement de la pièce jointe
-            Attachment data = new Attachment(Image);
-            message.Attachments.Add(data);
-
-            //serveur SMTP
-            SmtpClient client = new SmtpClient("Leserveur"); /* renseinger le serveur smtp */
-
             try
             {
-                //Envois du message
-                client.Send(message);
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+
+                message.From = new MailAddress("ultramegabidon@gmail.com");
+                message.To.Add(new MailAddress("loicdelaunay05@gmail.com"));
+                message.Subject = "Inscription";
+                Attachment Photo = new Attachment(photopath);
+                message.Body = "Bonjour " +
+                    "\n" +
+                    "Merci d'être passé au stand du BTS SIO." +
+                    "\n" +
+                    "\n" + "Ce message fait suite à la réussite de votre inscription à travers notre application." +
+                    "\n" +
+                    "Pour plus d'informations sur le BTS vous pouvez vous rendre sur notre site web à l'adresse suivante : https://bts-sio.lyc-bonaparte.fr/" +
+                    "\n" +
+                    "Bien à vous, l'équipe du BTS SIO SLAM\n" +
+                    "\n" +
+                    "-------------------------------------------------------------------------------------------------\n" +
+                    "Ceci est un méssage automatique\n" +
+                    "Merci de ne pas y répondre\n";
+                message.Attachments.Add(Photo);
+
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential("ultramegabidon@gmail.com", "Megabidon83");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
             }
-            catch
+            catch (Exception)
             {
                 throw new Exception();
             }

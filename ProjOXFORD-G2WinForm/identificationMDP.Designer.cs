@@ -34,7 +34,6 @@
             this.Btn_VerifierMDP = new MetroFramework.Controls.MetroButton();
             this.Btn_RetourMDP = new MetroFramework.Controls.MetroButton();
             this.Pnl_ChiffreMdp = new MetroFramework.Controls.MetroPanel();
-            this.Btn_NombreMDPRetour = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDP0 = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDP9 = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDP8 = new MetroFramework.Controls.MetroButton();
@@ -45,6 +44,7 @@
             this.Btn_NombreMDP3 = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDP2 = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDP1 = new MetroFramework.Controls.MetroButton();
+            this.Btn_NombreMDPRetour = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Pnl_ChiffreMdp.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,7 @@
             this.Btn_VerifierMDP.TabIndex = 4;
             this.Btn_VerifierMDP.Text = "Vérifier";
             this.Btn_VerifierMDP.UseSelectable = true;
+            this.Btn_VerifierMDP.Click += new System.EventHandler(this.Btn_VerifierMDP_Click);
             // 
             // Btn_RetourMDP
             // 
@@ -150,16 +151,6 @@
             this.Pnl_ChiffreMdp.VerticalScrollbarBarColor = true;
             this.Pnl_ChiffreMdp.VerticalScrollbarHighlightOnWheel = false;
             this.Pnl_ChiffreMdp.VerticalScrollbarSize = 10;
-            // 
-            // Btn_NombreMDPRetour
-            // 
-            this.Btn_NombreMDPRetour.Location = new System.Drawing.Point(958, 217);
-            this.Btn_NombreMDPRetour.Name = "Btn_NombreMDPRetour";
-            this.Btn_NombreMDPRetour.Size = new System.Drawing.Size(70, 70);
-            this.Btn_NombreMDPRetour.TabIndex = 12;
-            this.Btn_NombreMDPRetour.Text = "<-";
-            this.Btn_NombreMDPRetour.UseSelectable = true;
-            this.Btn_NombreMDPRetour.Click += new System.EventHandler(this.Btn_NombreMDPRetour_Click);
             // 
             // Btn_NombreMDP0
             // 
@@ -260,6 +251,16 @@
             this.Btn_NombreMDP1.Text = "1";
             this.Btn_NombreMDP1.UseSelectable = true;
             this.Btn_NombreMDP1.Click += new System.EventHandler(this.Btn_NombreMDP1_Click);
+            // 
+            // Btn_NombreMDPRetour
+            // 
+            this.Btn_NombreMDPRetour.Location = new System.Drawing.Point(958, 217);
+            this.Btn_NombreMDPRetour.Name = "Btn_NombreMDPRetour";
+            this.Btn_NombreMDPRetour.Size = new System.Drawing.Size(70, 70);
+            this.Btn_NombreMDPRetour.TabIndex = 12;
+            this.Btn_NombreMDPRetour.Text = "<-";
+            this.Btn_NombreMDPRetour.UseSelectable = true;
+            this.Btn_NombreMDPRetour.Click += new System.EventHandler(this.Btn_NombreMDPRetour_Click);
             // 
             // identificationMDP
             // 
