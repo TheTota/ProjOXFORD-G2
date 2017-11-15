@@ -20,6 +20,7 @@ namespace ProjOXFORD_G2WinForm
         //Chemin vers la racine du programme
         string cheminRacine = Environment.CurrentDirectory;
         string cheminVersDossierTemp;
+        string faceIdReconnu = "";
 
         //Liste des caméras
         List<WebCameraId> listCams;
@@ -115,18 +116,21 @@ namespace ProjOXFORD_G2WinForm
 
                 string faceId = Convert.ToString(resultatPhotoTemporaire.GetValue("faceId"));
 
-                int compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(faceId);
+                JObject compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(faceId);
 
-                reloadPage();
+                //reloadPage();
 
                 //Comparaison du retour
 
                 //Si le visage à été reconnu
-                if (compareFace >= 0.6)
+                if (compareFace != null && Convert.ToInt32(compareFace.GetValue("confidence")) >= 0.6)
                 {
                     Cam_Visuel1.Hide();
                     Img_previewUserReconnu.Show();
                     Img_identificationVisuelPreview.Hide();
+
+                    faceIdReconnu = Convert.ToString(compareFace.GetValue("persistedFaceId"));
+                    MessageBox.Show(faceIdReconnu);
 
 
                     MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU",MessageBoxButtons.OK,MessageBoxIcon.Question);
@@ -139,6 +143,7 @@ namespace ProjOXFORD_G2WinForm
                 else
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Aucun utilisateur reconnu !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+                    //ReconnaissanceFaciale.MailErreur(imgPrev);
                 }
             }
             catch(Exception ex)
@@ -210,7 +215,7 @@ namespace ProjOXFORD_G2WinForm
 
         private void Btn_continuerToMdp_Click(object sender, EventArgs e)
         {
-            Form identificationVisuel = new identificationMDP();
+            Form identificationVisuel = new identificationMDP(faceIdReconnu);
             identificationVisuel.Location = this.Location;
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
