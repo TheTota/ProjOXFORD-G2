@@ -157,7 +157,7 @@ namespace ProjOXFORD_G2
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@faceId", faceId);
+                cmd.Parameters.AddWithValue("@faceId",faceId);
                 var scalar = cmd.ExecuteScalar();
                 return Convert.ToInt32(scalar);
             }

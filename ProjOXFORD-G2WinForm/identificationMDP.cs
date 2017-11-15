@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProjOXFORD_G2;
 
 namespace ProjOXFORD_G2WinForm
 {
@@ -148,16 +147,24 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire.</param>
         /// <param name="faceId">Face ID pour lequel le mot de passe ca être récupéré.</param>
         /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
-        public static bool CompareMdp(int mdpSaisi, string faceId)
+        public static bool CompareMdp(IWin32Window owner,int mdpSaisi, string faceId)
         {
+            MessageBox.Show(Convert.ToString(TraitementBdd.RecupMdp(faceId)));
             if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
             {
+                MetroFramework.MetroMessageBox.Show(owner,"Mot de passe valide !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return true;
             }
             else
             {
+                MetroFramework.MetroMessageBox.Show(owner, "Mot de passe non valide !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
                 return false;
             }
+        }
+
+        private void Btn_VerifierMDP_Click(object sender, EventArgs e)
+        {
+            CompareMdp(this,Convert.ToInt16(TxtBox_MotDePasse.Text),faceIdaTester);
         }
     }
 }

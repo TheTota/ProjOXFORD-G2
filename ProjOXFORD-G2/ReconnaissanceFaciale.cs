@@ -297,7 +297,7 @@ namespace ProjOXFORD_G2
                     "\n" +
                     "Pour plus d'informations sur le BTS vous pouvez vous rendre sur notre site web à l'adresse suivante : https://bts-sio.lyc-bonaparte.fr/" +
                     "\n" +
-                    "Bien à vous, l'équipe du BTS SIO SLAM\n" +
+                    "Bien à vous, blablabla l'équipe du BTS SIO SLAM\n" +
                     "\n" +
                     "-------------------------------------------------------------------------------------------------\n" +
                     "Ceci est un méssage automatique\n" +
