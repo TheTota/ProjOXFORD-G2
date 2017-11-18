@@ -42,7 +42,7 @@ namespace ProjOXFORD_G2
         /// Déclaration d'un objet de la classe MySqlCommand.
         /// Permet d'exécuter une requête, récupérer le résultat de la requête, et d'exécuter une procédure stockée.
         /// </summary>
-        private static MySqlCommand cmd;
+        private static MySqlCommand _cmd;
 
         /// <summary>
         /// Méthode de connexion à la base de données.
@@ -100,11 +100,11 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                var scalar = cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
+                var scalar = _cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
                 Console.WriteLine("Requête effectuée.");
                 FermerConnexion();
             }
@@ -124,12 +124,12 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@faceid", string.Empty);   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
-                var reader = cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
+                _cmd.Parameters.AddWithValue("@faceid", string.Empty);   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
+                var reader = _cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
                 Console.WriteLine("Requête effectuée.");
                 FermerConnexion();
                 return reader;
@@ -153,12 +153,13 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@faceId",faceId);
-                var scalar = cmd.ExecuteScalar();
+                _cmd.Parameters.AddWithValue("@faceId",faceId);
+                var scalar = _cmd.ExecuteScalar();
+				FermerConnexion();
                 return Convert.ToInt32(scalar);
             }
             catch (Exception ex)
@@ -183,15 +184,15 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@utilisateur", utilisateur);
-                cmd.Parameters.AddWithValue("@categorie", categorie);
-                cmd.Parameters.AddWithValue("@date", timestamp);
-                cmd.Parameters.AddWithValue("@valeur", valeur);
-                cmd.ExecuteNonQuery();
+                _cmd.Parameters.AddWithValue("@utilisateur", utilisateur);
+                _cmd.Parameters.AddWithValue("@categorie", categorie);
+                _cmd.Parameters.AddWithValue("@date", timestamp);
+                _cmd.Parameters.AddWithValue("@valeur", valeur);
+                var nb =_cmd.ExecuteNonQuery();
                 FermerConnexion();
             }
             catch (Exception ex)
