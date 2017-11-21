@@ -165,6 +165,11 @@ namespace ProjOXFORD_G2WinForm
         private void Btn_VerifierMDP_Click(object sender, EventArgs e)
         {
             CompareMdp(this,Convert.ToInt16(TxtBox_MotDePasse.Text),faceIdaTester);
+            Form identificationVisuel = new IdentificationTermine();
+            identificationVisuel.Location = this.Location;
+            identificationVisuel.StartPosition = FormStartPosition.Manual;
+            identificationVisuel.Show();
+            this.Close();
         }
     }
 }
