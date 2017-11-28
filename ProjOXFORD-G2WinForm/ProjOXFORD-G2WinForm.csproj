@@ -57,6 +57,12 @@
     <Compile Include="identificationMDP.Designer.cs">
       <DependentUpon>identificationMDP.cs</DependentUpon>
     </Compile>
+    <Compile Include="IdentificationTermine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdentificationTermine.Designer.cs">
+      <DependentUpon>IdentificationTermine.cs</DependentUpon>
+    </Compile>
     <Compile Include="identificationVisuel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="identificationMDP.resx">
       <DependentUpon>identificationMDP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentificationTermine.resx">
+      <DependentUpon>IdentificationTermine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="identificationVisuel.resx">
       <DependentUpon>identificationVisuel.cs</DependentUpon>
