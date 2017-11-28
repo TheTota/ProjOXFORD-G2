@@ -27,27 +27,8 @@ namespace ProjOXFORD_G2
 
         public static void Main()
         {
-            // Récupération du path de l'image
-            //Console.WriteLine("chemin de l'image svp : \n");
-            //string imageFilePath = Console.ReadLine();
 
-            //Task<string> faceAdd = FaceAddAsync(imageFilePath);
-            //faceAdd.Wait();
-            //Console.WriteLine(faceAdd.Result);
-
-            //Task<string> tempFaceAdd = FaceRecCreateFaceIdTempAsync(imageFilePath);
-            //tempFaceAdd.Wait();
-            //Console.WriteLine(tempFaceAdd.Result);
-
-            //Task<int> compareFace = FaceRecCompareFaceAsync(imageFilePath);
-            //compareFace.Wait();
-            //Console.WriteLine(compareFace.Result);
-
-
-
-            //Console.ReadLine();
-
-            MailErreur("C:\\Users\\LD\\Pictures\\Camera Roll\\zbeubzbeub.jpg");
+            //MailErreur("C:\\Users\\LD\\Pictures\\Camera Roll\\zbeubzbeub.jpg");
 
         }
 
@@ -197,7 +178,7 @@ namespace ProjOXFORD_G2
         /// Converti l'image en tableau binaire
         /// </summary>
         /// <param name="imageFilePath">Le fichier de l'image.</param>
-        /// <returns>Un tableau de bite en fonction de l'image.</returns>
+        /// <returns>Un tableau de bit en fonction de l'image.</returns>
         private static byte[] GetImageAsByteArray(string imageFilePath)
         {
             FileStream fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);

@@ -27,7 +27,7 @@ namespace ProjOXFORD_G2
     {
         /// <summary> Membre privé contenant les informations de connexion à la base de données. Le @ sert
         /// à prendre la chaîne de caractères telle quelle. </summary>
-        private const string CNX = @"Server=127.0.0.1; Port=3306; Database=oxford; Uid=root; Pwd=;";
+        private const string CNX = @"Server=mysql-simubac.alwaysdata.net; Port=3306; Database=simubac_oxford; Uid=simubac; Pwd=aDemantA;";
 
         /// <summary> Déclaration d'un objet de la classe MysqlConnection. Va être utilisé pour gérer la
         /// connexion à la base de données MySQL. </summary>

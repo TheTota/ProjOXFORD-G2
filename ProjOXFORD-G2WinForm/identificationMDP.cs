@@ -25,7 +25,7 @@ namespace ProjOXFORD_G2WinForm
 
         private void identificationMDP_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(faceIdaTester);
+
         }
 
         /// <summary>
@@ -149,7 +149,6 @@ namespace ProjOXFORD_G2WinForm
         /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
         public static bool CompareMdp(IWin32Window owner,int mdpSaisi, string faceId)
         {
-            MessageBox.Show(Convert.ToString(TraitementBdd.RecupMdp(faceId)));
             if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
             {
                 MetroFramework.MetroMessageBox.Show(owner,"Mot de passe valide !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -165,7 +164,7 @@ namespace ProjOXFORD_G2WinForm
         private void Btn_VerifierMDP_Click(object sender, EventArgs e)
         {
             CompareMdp(this,Convert.ToInt16(TxtBox_MotDePasse.Text),faceIdaTester);
-            Form identificationVisuel = new IdentificationTermine();
+            Form identificationVisuel = new IdentificationTermine(faceIdaTester);
             identificationVisuel.Location = this.Location;
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
