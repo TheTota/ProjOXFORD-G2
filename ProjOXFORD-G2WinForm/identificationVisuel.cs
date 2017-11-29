@@ -130,7 +130,6 @@ namespace ProjOXFORD_G2WinForm
                     Img_identificationVisuelPreview.Hide();
 
                     faceIdReconnu = Convert.ToString(compareFace.GetValue("persistedFaceId"));
-                    MessageBox.Show(faceIdReconnu);
 
 
                     MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU",MessageBoxButtons.OK,MessageBoxIcon.Question);
@@ -143,7 +142,8 @@ namespace ProjOXFORD_G2WinForm
                 else
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Aucun utilisateur reconnu !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
-                    //ReconnaissanceFaciale.MailErreur(imgPrev);
+                    ReconnaissanceFaciale.MailErreur(imgPrev);
+                    reloadPage();
                 }
             }
             catch(Exception ex)
@@ -196,21 +196,26 @@ namespace ProjOXFORD_G2WinForm
         {
             Lbl_infoutilisateur.Show();
 
-            string smile = (string)Infos["faceAttributes"]["smile"];
+            float smile = (int)Infos["faceAttributes"]["smile"];
             string gender = (string)Infos["faceAttributes"]["gender"];
             string age = (string)Infos["faceAttributes"]["age"];
-            string moustache = (string)Infos["faceAttributes"]["facialHair"]["moustache"];
-            string beard = (string)Infos["faceAttributes"]["facialHair"]["beard"];
-            string sideburns = (string)Infos["faceAttributes"]["facialHair"]["sideburns"];
+            float moustache = (int)Infos["faceAttributes"]["facialHair"]["moustache"];
+            float beard = (int)Infos["faceAttributes"]["facialHair"]["beard"];
+            float sideburns = (int)Infos["faceAttributes"]["facialHair"]["sideburns"];
             string glasses = (string)Infos["faceAttributes"]["glasses"];
 
-            Lbl_infoutilisateur.Text = "Sourir : " + smile + "\n";
-            Lbl_infoutilisateur.Text += "Genre : " + gender + "\n";
+            Lbl_infoutilisateur.Text = "% de Sourir : " + smile*100 + "% \n";
+            Lbl_infoutilisateur.Text += "Sexe : " + gender + "\n";
             Lbl_infoutilisateur.Text += "Age : " + age + "\n";
-            Lbl_infoutilisateur.Text += "moustache : " + moustache + "\n";
-            Lbl_infoutilisateur.Text += "beard : " + beard + "\n";
-            Lbl_infoutilisateur.Text += "sideburns : " + sideburns + "\n";
-            Lbl_infoutilisateur.Text += "glasses : " + glasses + "\n";
+            Lbl_infoutilisateur.Text += "% de moustache : " + moustache*100 + "%\n";
+            Lbl_infoutilisateur.Text += "% de barbe : " + beard*100 + "%\n";
+            Lbl_infoutilisateur.Text += "% de rouflaquettes : " + sideburns*100 + "%\n";
+
+            if(glasses == "ReadingGlasses")
+            {
+                Lbl_infoutilisateur.Text += "Porte des lunettes de lecture";
+            }
+
         }
 
         private void Btn_continuerToMdp_Click(object sender, EventArgs e)

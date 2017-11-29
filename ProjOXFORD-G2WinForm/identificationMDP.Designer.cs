@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Txt_Titre3 = new System.Windows.Forms.Label();
             this.TxtBox_MotDePasse = new MetroFramework.Controls.MetroTextBox();
             this.Btn_VerifierMDP = new MetroFramework.Controls.MetroButton();
@@ -45,19 +44,10 @@
             this.Btn_NombreMDP2 = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDP1 = new MetroFramework.Controls.MetroButton();
             this.Btn_NombreMDPRetour = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pnl_ChiffreMdp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProjOXFORD_G2WinForm.Properties.Resources.LogoOxford;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 194);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Txt_Titre3
             // 
@@ -262,6 +252,16 @@
             this.Btn_NombreMDPRetour.UseSelectable = true;
             this.Btn_NombreMDPRetour.Click += new System.EventHandler(this.Btn_NombreMDPRetour_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjOXFORD_G2WinForm.Properties.Resources.LogoOxford;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 194);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // identificationMDP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,8 +276,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "identificationMDP";
             this.Load += new System.EventHandler(this.identificationMDP_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Pnl_ChiffreMdp.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

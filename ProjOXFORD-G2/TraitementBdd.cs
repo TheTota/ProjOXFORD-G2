@@ -16,38 +16,33 @@ using MySql.Data.MySqlClient;  // Librairie de connexion à MySQL ajoutée en r�
 
 namespace ProjOXFORD_G2
 {
-    /// <summary>
-    /// Classe qui va permettre la récupération des identifiants liés à la photo prise.
-    /// </summary>
+    #region Documentation -----------------------------------------------------------------------------
+    /// <summary> Classe qui va permettre la récupération des identifiants liés à la photo prise. </summary>
+    /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+    #endregion
+
+    /// <summary> A traitement bdd. </summary>
+    /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
     public static class TraitementBdd
     {
-        /// <summary>
-        /// Membre privé contenant les informations de connexion à la base de données.
-        /// Le @ sert à prendre la chaîne de caractères telle quelle.
-        /// </summary>
-        private const string CNX = @"Server=127.0.0.1; Port=3306; Database=oxford; Uid=root; Pwd=;";
+        /// <summary> Membre privé contenant les informations de connexion à la base de données. Le @ sert
+        /// à prendre la chaîne de caractères telle quelle. </summary>
+        private const string CNX = @"Server=mysql-simubac.alwaysdata.net; Port=3306; Database=simubac_oxford; Uid=simubac; Pwd=aDemantA;";
 
-        /// <summary>
-        /// Déclaration d'un objet de la classe MysqlConnection.
-        /// Va être utilisé pour gérer la connexion à la base de données MySQL.
-        /// </summary>
+        /// <summary> Déclaration d'un objet de la classe MysqlConnection. Va être utilisé pour gérer la
+        /// connexion à la base de données MySQL. </summary>
         private static MySqlConnection _connexion;
 
-        /// <summary>
-        /// Membre privé qui va contenir la requête.
-        /// </summary>
+        /// <summary> Membre privé qui va contenir la requête. </summary>
         private static string _requete;
 
-        /// <summary>
-        /// Déclaration d'un objet de la classe MySqlCommand.
-        /// Permet d'exécuter une requête, récupérer le résultat de la requête, et d'exécuter une procédure stockée.
-        /// </summary>
-        private static MySqlCommand cmd;
+        /// <summary> Déclaration d'un objet de la classe MySqlCommand. Permet d'exécuter une requête,
+        /// récupérer le résultat de la requête, et d'exécuter une procédure stockée. </summary>
+        private static MySqlCommand _cmd;
 
-        /// <summary>
-        /// Méthode de connexion à la base de données.
-        /// </summary>
-        /// <exception cref="Exception">Erreur de connexion à la base de données MySQL.</exception>
+        /// <summary> Méthode de connexion à la base de données. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <exception cref="Exception"> Erreur de connexion à la base de données MySQL. </exception>
         public static void OuvrirConnexion()
         {
             try
@@ -64,10 +59,9 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// Méthode publique de fermeture de la connexion à la base de données MySQL.
-        /// Va permettre de libérer les ressources de la base de données après une requête.
-        /// </summary>
+        /// <summary> Méthode publique de fermeture de la connexion à la base de données MySQL. Va
+        /// permettre de libérer les ressources de la base de données après une requête. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
         public static void FermerConnexion()
         {
             if (_connexion.State != ConnectionState.Closed)
@@ -77,34 +71,30 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// Méthode permettant de renvoyer une erreur.
-        /// Ecrite pour éviter la réécriture de code.
-        /// </summary>
-        /// <param name="ex">Exception qui sera retournée.</param>
-        /// <returns>Erreur d'exécution de la requête.</returns>
+        /// <summary> Méthode permettant de renvoyer une erreur. Ecrite pour éviter la réécriture de code. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <exception cref="Exception"> Thrown when an exception error condition occurs. </exception>
+        /// <param name="ex"> Exception qui sera retournée. </param>
+        /// <returns> Erreur d'exécution de la requête. </returns>
         public static Exception RenvoyerErreur(Exception ex)
         {
             FermerConnexion();
             throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
         }
 
-        /// <summary>
-        /// Méthode de récupération de la photo.
-        /// Destinée à l'affichage
-        /// </summary>
-        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
+        /// <summary> Méthode de récupération de la photo. Destinée à l'affichage. </summary>
+        /// <remarks> Almarean, 22/11/2017. </remarks>
         public static void RecupPhoto()
         {
             _requete = @"SELECT value FROM photos;";
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                var scalar = cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
+                var scalar = _cmd.ExecuteScalar();  // Permet de stocker le résultat de la requête quand elle renvoie une valeur unitaire.
                 Console.WriteLine("Requête effectuée.");
                 FermerConnexion();
             }
@@ -114,25 +104,33 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// Méthode de récupération des informations de l'utilisateur.
-        /// </summary>
-        /// <returns>Un jeu d'enregistrement concernant la personne à qui appartient le faceid.</returns>
-        public static MySqlDataReader RecupInfosUser()
+        /// <summary> Méthode de récupération des informations de l'utilisateur. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <exception cref="Exception"> Thrown when an exception error condition occurs. </exception>
+        /// <param name="faceId"> Face ID de la personne dont on veut récupérer les informations. </param>
+        /// <returns> Un jeu d'enregistrement concernant la personne à qui appartient le faceid. </returns>
+        public static string RecupInfosUser(string faceId)
         {
             _requete = @"SELECT photo, nom, prenom, type, birth, sexe, status, email FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceid;";
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                string nom = "";
+                string prenom = "";
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@faceid", string.Empty);   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
-                var reader = cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
-                Console.WriteLine("Requête effectuée.");
+                _cmd.Parameters.AddWithValue("@faceid", faceId);   // La valeur du paramètre sera la valeur retournée par la méthode qui ira chercher la valeur du FaceID dans le fichier JSON.
+                var reader = _cmd.ExecuteReader();  // Permet de stocker le résultat de la requête quand elle retourne plusieurs valeurs.
+                while (reader.Read())
+                {
+                    nom = reader.GetString(1);
+                    prenom = reader.GetString(2);
+                }
+                string infosAffichees = nom.ToUpper() + " " + prenom;
                 FermerConnexion();
-                return reader;
+                return infosAffichees;
             }
             catch (Exception ex)
             {
@@ -141,24 +139,25 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// Méthode permettant de récupérer le mot de passe enregistré en BDD avec celui saisi dasn le formulaire.
-        /// </summary>
-        /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire par l'utilisateur.</param>
-        /// <returns>Le mot de passe récupéré en base de données.</returns>
-        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
+        /// <summary> Méthode permettant de récupérer le mot de passe enregistré en BDD avec celui saisi
+        /// dasn le formulaire. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <exception cref="Exception"> La requête n'a pu aboutir. </exception>
+        /// <param name="faceId"> Face ID de la personne dont on veut récupérer le mot de passe. </param>
+        /// <returns> Le mot de passe récupéré en base de données. </returns>
         public static int RecupMdp(string faceId)
         {
             _requete = @"SELECT code FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceId;";
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@faceId",faceId);
-                var scalar = cmd.ExecuteScalar();
+                _cmd.Parameters.AddWithValue("@faceId", faceId);
+                var scalar = _cmd.ExecuteScalar();
+                FermerConnexion();
                 return Convert.ToInt32(scalar);
             }
             catch (Exception ex)
@@ -168,30 +167,28 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// Méthode qui insert un événement dans la table Events en base de données.
-        /// </summary>
-        /// <param name="utilisateur">Utilisateur ayant déclenché l'événement.</param>
-        /// <param name="categorie">Catégorie de l'événement.</param>
-        /// <param name="valeur">Valeur de l'événement.</param>
-        /// <exception cref="Exception">La requête n'a pu aboutir.</exception>
+        /// <summary> Méthode qui insert un événement dans la table Events en base de données. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <param name="utilisateur"> Utilisateur ayant déclenché l'événement. </param>
+        /// <param name="categorie">   Catégorie de l'événement. </param>
+        /// <param name="valeur">      Valeur de l'événement. </param>
         public static void CreerEvent(int utilisateur, int categorie, string valeur)
         {
             _requete = @"INSERT INTO events(user, category, date, value) VALUES (@utilisateur, @categorie, @date, @valeur);";
             //// La date sera un timestamp qui contiendra le nombre de secondes depuis le 01/01/1970.
-            int timestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+            int timestamp = Convert.ToInt32(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
             try
             {
                 OuvrirConnexion();
-                cmd = new MySqlCommand(_requete, _connexion)
+                _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@utilisateur", utilisateur);
-                cmd.Parameters.AddWithValue("@categorie", categorie);
-                cmd.Parameters.AddWithValue("@date", timestamp);
-                cmd.Parameters.AddWithValue("@valeur", valeur);
-                cmd.ExecuteNonQuery();
+                _cmd.Parameters.AddWithValue("@utilisateur", utilisateur);
+                _cmd.Parameters.AddWithValue("@categorie", categorie);
+                _cmd.Parameters.AddWithValue("@date", timestamp);
+                _cmd.Parameters.AddWithValue("@valeur", valeur);
+                var nb = _cmd.ExecuteNonQuery();
                 FermerConnexion();
             }
             catch (Exception ex)
@@ -200,12 +197,10 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// L'événement créé en base de données sera de la catégorie Erreur.
-        /// </summary>
-        /// <param name="utilisateur">ID de l'utilisateur ayant déclenché l'erreur.</param>
-        /// <param name="valeur">Valeur de l'erreur.</param>
-        /// <exception cref="Exception">La requête n'a pu aboutir.\n" + ex.Message</exception>
+        /// <summary> L'événement créé en base de données sera de la catégorie Erreur. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <param name="utilisateur"> ID de l'utilisateur ayant déclenché l'erreur. </param>
+        /// <param name="valeur">      Valeur de l'erreur. </param>
         public static void EventErreur(int utilisateur, string valeur)
         {
             try
@@ -218,12 +213,12 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// L'événement créé en base de données sera de la catégorie Information.
-        /// </summary>
-        /// <param name="utilisateur">ID de l'utilisateur ayant déclenché la remontée d'information.</param>
-        /// <param name="valeur">Valeur de l'information.</param>
-        /// <exception cref="Exception">La requête n'a pu aboutir.\n" + ex.Message</exception>
+        /// <summary> L'événement créé en base de données sera de la catégorie Information. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <param name="utilisateur">
+        ///     ID de l'utilisateur ayant déclenché la remontée d'information.
+        /// </param>
+        /// <param name="valeur">      Valeur de l'information. </param>
         public static void EventInfo(int utilisateur, string valeur)
         {
             try
@@ -236,12 +231,10 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary>
-        /// L'événement créé en base de données sera de type Administration.
-        /// </summary>
-        /// <param name="utilisateur">ID de l'utilisateur ayant déclenché l'événement de ce type.</param>
-        /// <param name="valeur">Valeur de l'événement.</param>
-        /// <exception cref="Exception">La requête n'a pu aboutir.\n" + ex.Message</exception>
+        /// <summary> L'événement créé en base de données sera de type Administration. </summary>
+        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <param name="utilisateur"> ID de l'utilisateur ayant déclenché l'événement de ce type. </param>
+        /// <param name="valeur">      Valeur de l'événement. </param>
         public static void EventAdmin(int utilisateur, string valeur)
         {
             try
