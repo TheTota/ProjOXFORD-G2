@@ -110,8 +110,8 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                string nom = "";
-                string prenom = "";
+                string nom = string.Empty;
+                string prenom = string.Empty;
                 _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
@@ -240,21 +240,5 @@ namespace ProjOXFORD_G2
                 RenvoyerErreur(ex);
             }
         }
-
-        ///// <summary> Méthode permettant d'écrire coorectement le prénom pour l'afficher plus tard. </summary>
-        ///// <remarks> Thomas LAURE, 29/11/2017. </remarks>
-        ///// <param name="prenom"> Prénom du visiteur. </param>
-        ///// <returns> Le prénom de la personne souhaitant s'identifier en respectant les règles d'écriture du nom et du prénom. </returns>
-        //public static string PrenomToUpperFirstCase(string prenom)
-        //{
-        //    string prenomUpper = "";
-        //    char[] lettresPrenom = prenom.ToCharArray();
-        //    string premiereLettrePrenom = Convert.ToString(lettresPrenom[0]).ToUpper();
-        //    for (int i = 1; i < lettresPrenom.Count(); i++)
-        //    {
-        //        prenomUpper += Convert.ToString(lettresPrenom[i]).ToLower();
-        //    }
-        //    return premiereLettrePrenom + prenomUpper;
-        //}
     }
 }
