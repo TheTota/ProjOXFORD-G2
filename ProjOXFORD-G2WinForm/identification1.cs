@@ -18,7 +18,7 @@ namespace ProjOXFORD_G2WinForm
         {
             InitializeComponent();
 
-            //Ajout de la transparence sur le lock
+            ////Ajout de la transparence sur le lock.
             Img_Topper1.Controls.Add(Img_Unlock);
             Img_Unlock.BackColor = Color.Transparent;
             TxtAnimation();
@@ -68,7 +68,7 @@ namespace ProjOXFORD_G2WinForm
         private void GoToIdentificationVisuel()
         {
             string cheminVersDossierTemp = Environment.CurrentDirectory + "\\temp";
-            //Créer le dossier temporaire si il n'existe
+            //// Créer le dossier temporaire s'il n'existe pas.
             if (!System.IO.Directory.Exists(cheminVersDossierTemp))
             {
                 Directory.CreateDirectory(cheminVersDossierTemp);

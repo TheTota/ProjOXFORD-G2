@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Mail;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace ProjOXFORD_G2
 {
@@ -255,9 +256,9 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
-        /// envois un Mail d'erreur au RSSI quand une personne tente de s'authentifier sans que ce sois vraiment elle.
+        /// Envoie un Mail d'erreur au RSSI quand une personne tente de s'authentifier sans que ce ne soit vraiment elle.
         /// </summary>
-        /// <param name="Image"> chemin de l'image</param>
+        /// <param name="Image"> Chemin de l'image. </param>
         /// <exception cref="Exception"></exception>
         public static void MailErreur(string photopath)
         {
@@ -276,7 +277,7 @@ namespace ProjOXFORD_G2
                     "\n" +
                     "\n" + "Ce message fait suite à la réussite de votre inscription à travers notre application." +
                     "\n" +
-                    "Pour plus d'informations sur le BTS vous pouvez vous rendre sur notre site web à l'adresse suivante : https://bts-sio.lyc-bonaparte.fr/" +
+                    "Pour plus d'informations sur le BTS, vous pouvez vous rendre sur notre site web à l'adresse suivante : https://bts-sio.lyc-bonaparte.fr/" +
                     "\n" +
                     "Bien à vous, blablabla l'équipe du BTS SIO SLAM\n" +
                     "\n" +
@@ -293,11 +294,26 @@ namespace ProjOXFORD_G2
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }
-            catch (Exception)
+            catch
             {
                 throw new Exception();
             }
+        }
 
+        /// <summary> Méthode permettant d'écrire coorectement le prénom pour l'afficher plus tard. </summary>
+        /// <remarks> Thomas LAURE, 29/11/2017. </remarks>
+        /// <param name="prenom"> Prénom du visiteur. </param>
+        /// <returns> Le prénom de la personne souhaitant s'identifier en respectant les règles d'écriture du nom et du prénom. </returns>
+        public static string PrenomToUpperFirstCase(string prenom)
+        {
+            string prenomUpper = "";
+            char[] lettresPrenom = prenom.ToCharArray();
+            string premiereLettrePrenom = Convert.ToString(lettresPrenom[0]).ToUpper();
+            for (int i = 1; i < lettresPrenom.Count(); i++)
+            {
+                prenomUpper += Convert.ToString(lettresPrenom[i]).ToLower();
+            }
+            return premiereLettrePrenom + prenomUpper;
         }
     }
 }

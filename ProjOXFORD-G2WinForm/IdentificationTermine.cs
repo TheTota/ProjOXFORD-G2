@@ -25,7 +25,7 @@ namespace ProjOXFORD_G2WinForm
         private void IdentificationTermine_Load(object sender, EventArgs e)
         {
             WaitAndReload();
-            Txt_infos.Text = "Bienvenue Mr " + TraitementBdd.RecupInfosUser(faceId);
+            Txt_infos.Text = "Bienvenue M. " + TraitementBdd.RecupInfosUser(faceId);
         }
 
         private async void WaitAndReload()
