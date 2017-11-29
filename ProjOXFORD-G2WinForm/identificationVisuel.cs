@@ -142,7 +142,8 @@ namespace ProjOXFORD_G2WinForm
                 else
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Aucun utilisateur reconnu !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
-                    //ReconnaissanceFaciale.MailErreur(imgPrev);
+                    ReconnaissanceFaciale.MailErreur(imgPrev);
+                    reloadPage();
                 }
             }
             catch(Exception ex)
