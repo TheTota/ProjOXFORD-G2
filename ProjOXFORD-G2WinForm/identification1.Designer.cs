@@ -42,7 +42,7 @@
             this.Img_Topper1.Image = global::ProjOXFORD_G2WinForm.Properties.Resources._1topper;
             this.Img_Topper1.Location = new System.Drawing.Point(-1, 0);
             this.Img_Topper1.Name = "Img_Topper1";
-            this.Img_Topper1.Size = new System.Drawing.Size(1252, 795);
+            this.Img_Topper1.Size = new System.Drawing.Size(1920, 1080);
             this.Img_Topper1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Img_Topper1.TabIndex = 0;
             this.Img_Topper1.TabStop = false;

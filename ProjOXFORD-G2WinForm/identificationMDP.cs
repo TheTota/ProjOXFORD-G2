@@ -19,6 +19,10 @@ namespace ProjOXFORD_G2WinForm
         {
             faceIdaTester = faceId;
             InitializeComponent();
+
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         
@@ -163,12 +167,15 @@ namespace ProjOXFORD_G2WinForm
 
         private void Btn_VerifierMDP_Click(object sender, EventArgs e)
         {
-            CompareMdp(this,Convert.ToInt16(TxtBox_MotDePasse.Text),faceIdaTester);
-            Form identificationVisuel = new IdentificationTermine(faceIdaTester);
-            identificationVisuel.Location = this.Location;
-            identificationVisuel.StartPosition = FormStartPosition.Manual;
-            identificationVisuel.Show();
-            this.Close();
+            if (CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), faceIdaTester))
+            {
+                CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), faceIdaTester);
+                Form identificationVisuel = new IdentificationTermine(faceIdaTester);
+                identificationVisuel.Location = this.Location;
+                identificationVisuel.StartPosition = FormStartPosition.Manual;
+                identificationVisuel.Show();
+                this.Close();
+            }
         }
     }
 }

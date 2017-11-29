@@ -50,11 +50,11 @@
             // Txt_Titre2
             // 
             this.Txt_Titre2.AutoSize = true;
-            this.Txt_Titre2.Font = new System.Drawing.Font("Roboto Th", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Titre2.Font = new System.Drawing.Font("Roboto Lt", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_Titre2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Txt_Titre2.Location = new System.Drawing.Point(347, 60);
+            this.Txt_Titre2.Location = new System.Drawing.Point(549, 60);
             this.Txt_Titre2.Name = "Txt_Titre2";
-            this.Txt_Titre2.Size = new System.Drawing.Size(707, 65);
+            this.Txt_Titre2.Size = new System.Drawing.Size(764, 67);
             this.Txt_Titre2.TabIndex = 2;
             this.Txt_Titre2.Text = "Vous avez bien été authentifié";
             // 
@@ -64,17 +64,17 @@
             this.Txt_infos.Font = new System.Drawing.Font("Roboto Th", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_infos.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Txt_infos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Txt_infos.Location = new System.Drawing.Point(379, 239);
+            this.Txt_infos.Location = new System.Drawing.Point(691, 307);
             this.Txt_infos.Name = "Txt_infos";
-            this.Txt_infos.Size = new System.Drawing.Size(491, 65);
+            this.Txt_infos.Size = new System.Drawing.Size(484, 65);
             this.Txt_infos.TabIndex = 3;
-            this.Txt_infos.Text = "Bienvenue Mr \"nom\"";
+            this.Txt_infos.Text = "Bienvenue M. \"nom\"";
             this.Txt_infos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(301, 322);
+            this.pictureBox2.Location = new System.Drawing.Point(612, 387);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(662, 422);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 756);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Txt_infos);
             this.Controls.Add(this.Txt_Titre2);

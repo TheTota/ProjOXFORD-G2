@@ -28,6 +28,10 @@ namespace ProjOXFORD_G2WinForm
         public identificationVisuel()
         {
             InitializeComponent();
+
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void identificationVisuel_Load(object sender, EventArgs e)
@@ -55,9 +59,10 @@ namespace ProjOXFORD_G2WinForm
             try
             {
                 Cam_Visuel1.StartCapture(listCams[0]);
-            }catch(Exception)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Aucune camera détécté !", "ATTENTION !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "ATTENTION !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             //Créer le dossier temporaire si il n'existe
@@ -157,11 +162,17 @@ namespace ProjOXFORD_G2WinForm
 
         private void reloadPage()
         {
-            Load_identificationVisuel.Hide();
-            Txt_chargementMetro.Hide();
-            Btn_RetourVisuel.Enabled = true;
-            Btn_VérifierVisuel.Enabled = true;
-            Cam_Visuel1.StartCapture(listCams[List_Camera.SelectedIndex]);
+            //Load_identificationVisuel.Hide();
+            //Txt_chargementMetro.Hide();
+            //Btn_RetourVisuel.Enabled = true;
+            //Btn_VérifierVisuel.Enabled = true;
+            //Cam_Visuel1.StartCapture(listCams[List_Camera.SelectedIndex]);
+            //Cam_Visuel1.StopCapture();
+            Form identificationVisuel = new identificationVisuel();
+            identificationVisuel.Location = this.Location;
+            identificationVisuel.StartPosition = FormStartPosition.Manual;
+            identificationVisuel.Show();
+            this.Hide();
         }
 
         private void removeCache()
@@ -225,6 +236,16 @@ namespace ProjOXFORD_G2WinForm
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
             this.Close();
+        }
+
+        private void Img_previewUserReconnu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cam_Visuel1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

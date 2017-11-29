@@ -20,12 +20,16 @@ namespace ProjOXFORD_G2WinForm
         {
             InitializeComponent();
             faceId = _faceId;
+
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void IdentificationTermine_Load(object sender, EventArgs e)
         {
             WaitAndReload();
-            Txt_infos.Text = "Bienvenue Mr " + TraitementBdd.RecupInfosUser(faceId);
+            Txt_infos.Text = "Bienvenue M. " + TraitementBdd.RecupInfosUser(faceId);
         }
 
         private async void WaitAndReload()
