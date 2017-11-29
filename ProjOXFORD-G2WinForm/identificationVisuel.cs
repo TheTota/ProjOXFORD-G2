@@ -140,6 +140,9 @@ namespace ProjOXFORD_G2WinForm
                     MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU",MessageBoxButtons.OK,MessageBoxIcon.Question);
                     affichageInfoVisage(resultatPhotoTemporaire);
 
+                    Load_identificationVisuel.Hide();
+                    Txt_chargementMetro.Hide();
+
                     Btn_continuerToMdp.Show();
                     Btn_continuerToMdp.Enabled = true;
                 }

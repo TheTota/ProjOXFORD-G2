@@ -39,11 +39,11 @@
             // Img_Topper1
             // 
             this.Img_Topper1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Img_Topper1.Image = global::ProjOXFORD_G2WinForm.Properties.Resources._1topper;
-            this.Img_Topper1.Location = new System.Drawing.Point(-1, 0);
+            this.Img_Topper1.Image = global::ProjOXFORD_G2WinForm.Properties.Resources.AccueilNew;
+            this.Img_Topper1.Location = new System.Drawing.Point(-1, -2);
             this.Img_Topper1.Name = "Img_Topper1";
-            this.Img_Topper1.Size = new System.Drawing.Size(1920, 1080);
-            this.Img_Topper1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Img_Topper1.Size = new System.Drawing.Size(1929, 1080);
+            this.Img_Topper1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Img_Topper1.TabIndex = 0;
             this.Img_Topper1.TabStop = false;
             this.Img_Topper1.Click += new System.EventHandler(this.Img_Topper1_Click);
@@ -55,7 +55,7 @@
             this.Txt_Titre.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Txt_Titre.Font = new System.Drawing.Font("Roboto", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_Titre.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Txt_Titre.Location = new System.Drawing.Point(224, 27);
+            this.Txt_Titre.Location = new System.Drawing.Point(564, 60);
             this.Txt_Titre.Name = "Txt_Titre";
             this.Txt_Titre.Size = new System.Drawing.Size(793, 115);
             this.Txt_Titre.TabIndex = 1;
@@ -67,9 +67,9 @@
             // 
             this.Img_Unlock.BackColor = System.Drawing.Color.Transparent;
             this.Img_Unlock.Image = global::ProjOXFORD_G2WinForm.Properties.Resources._1cadena;
-            this.Img_Unlock.Location = new System.Drawing.Point(319, 281);
+            this.Img_Unlock.Location = new System.Drawing.Point(572, 296);
             this.Img_Unlock.Name = "Img_Unlock";
-            this.Img_Unlock.Size = new System.Drawing.Size(626, 390);
+            this.Img_Unlock.Size = new System.Drawing.Size(777, 505);
             this.Img_Unlock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Img_Unlock.TabIndex = 2;
             this.Img_Unlock.TabStop = false;
@@ -78,11 +78,11 @@
             // Txt_SousTitre1
             // 
             this.Txt_SousTitre1.AutoSize = true;
-            this.Txt_SousTitre1.Font = new System.Drawing.Font("Roboto Lt", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_SousTitre1.Font = new System.Drawing.Font("Roboto Lt", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_SousTitre1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.Txt_SousTitre1.Location = new System.Drawing.Point(213, 697);
+            this.Txt_SousTitre1.Location = new System.Drawing.Point(122, 919);
             this.Txt_SousTitre1.Name = "Txt_SousTitre1";
-            this.Txt_SousTitre1.Size = new System.Drawing.Size(837, 58);
+            this.Txt_SousTitre1.Size = new System.Drawing.Size(1677, 115);
             this.Txt_SousTitre1.TabIndex = 3;
             this.Txt_SousTitre1.Text = "APPUYER POUR VOUS AUTHENTIFIER";
             this.Txt_SousTitre1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1250, 784);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.Txt_SousTitre1);
             this.Controls.Add(this.Img_Unlock);
             this.Controls.Add(this.Txt_Titre);
