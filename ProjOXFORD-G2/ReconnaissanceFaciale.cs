@@ -24,10 +24,13 @@ namespace ProjOXFORD_G2
     public class ReconnaissanceFaciale
     {
         //// Lien de la clef Oxford.
-        private const string CLE_OXFORD = "bade90def1b947a7ae96c103847db05c";
+        private const string CLE_OXFORD = "c68422f56ead4a0b998fd07811bf0b05";
 
-        //Lien de la clef Oxford
-        const string clefOxford = "c68422f56ead4a0b998fd07811bf0b05";
+        //Url de POST de demande  
+        const string URI_BASE_DETECT = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+        const string URI_BASE_VERIFY = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/verify";
+        const string URI_FACE_ADD = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/facelists/oxford/persistedFaces";
+        const string URI_FACE_COMPARE = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars";
 
         public static void Main()
         {
