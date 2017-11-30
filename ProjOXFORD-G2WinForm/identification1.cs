@@ -72,7 +72,7 @@ namespace ProjOXFORD_G2WinForm
         private void GoToIdentificationVisuel()
         {
             string cheminVersDossierTemp = Environment.CurrentDirectory + "\\temp";
-            //Créer le dossier temporaire si il n'existe
+            //// Créer le dossier temporaire s'il n'existe pas.
             if (!System.IO.Directory.Exists(cheminVersDossierTemp))
             {
                 Directory.CreateDirectory(cheminVersDossierTemp);

@@ -33,7 +33,7 @@ namespace ProjOXFORD_G2WinForm
         }
 
         /// <summary>
-        /// Enmpéche d'entrer autre chose que des nombres et empèche le dépassement de 4 chiffres
+        /// Enmpéche de saisir autre chose que des nombres et empèche le dépassement de 4 chiffres.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -146,7 +146,7 @@ namespace ProjOXFORD_G2WinForm
         }
 
         /// <summary>
-        /// Compare le mot de passe récupéré en BDD avec celui saisir par l'utilisateur dans le formulaire.
+        /// Compare le mot de passe récupéré en BDD avec celui saisi par l'utilisateur dans le formulaire.
         /// </summary>
         /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire.</param>
         /// <param name="faceId">Face ID pour lequel le mot de passe ca être récupéré.</param>

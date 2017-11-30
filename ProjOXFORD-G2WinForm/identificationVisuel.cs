@@ -17,12 +17,12 @@ namespace ProjOXFORD_G2WinForm
 {
     public partial class identificationVisuel : MetroFramework.Forms.MetroForm
     {
-        //Chemin vers la racine du programme
+        //// Chemin vers la racine du programme.
         string cheminRacine = Environment.CurrentDirectory;
         string cheminVersDossierTemp;
         string faceIdReconnu = "";
 
-        //Liste des caméras
+        //// Liste des caméras.
         List<WebCameraId> listCams;
 
         public identificationVisuel()
@@ -43,10 +43,10 @@ namespace ProjOXFORD_G2WinForm
             Btn_continuerToMdp.Hide();
             Btn_continuerToMdp.Enabled = false;
 
-            //Chemin vers le dossier temporaire de l'application
+            //// Chemin vers le dossier temporaire de l'application.
             cheminVersDossierTemp = cheminRacine + "\\temp";
 
-            //Liste les caméras
+            //// Liste les caméras.
             listCams = Cam_Visuel1.GetVideoCaptureDevices().ToList<WebCameraId>();
 
             foreach (WebCameraId camera in listCams)
@@ -65,13 +65,13 @@ namespace ProjOXFORD_G2WinForm
                 MessageBox.Show(ex.Message, "ATTENTION !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            //Créer le dossier temporaire si il n'existe
+            // Crée le dossier temporaire s'il n'existe pas.
             if (!System.IO.Directory.Exists(cheminVersDossierTemp))
             {
                 Directory.CreateDirectory(cheminVersDossierTemp);
             }
 
-            //Supprime le cache
+            //// Supprime le cache.
             removeCache();
         }
 
@@ -91,12 +91,12 @@ namespace ProjOXFORD_G2WinForm
 
         private void Btn_VérifierVisuel_Click(object sender, EventArgs e)
         {
-            //vérifie si le dossier temp existe sinon le créer 
+            //// Vérifie si le dossier temp existe sinon on le crée.
             string cheminVersImageTemp = cheminVersDossierTemp + "\\capture" + DateTimeOffset.Now.ToUnixTimeSeconds() + ".jpeg";
 
             Cam_Visuel1.GetCurrentImage().Save(cheminVersImageTemp);
 
-            //Appelle du test de l'image
+            //// Appel du test de l'image.
             TestImage(cheminVersImageTemp);
 
         }
@@ -109,7 +109,7 @@ namespace ProjOXFORD_G2WinForm
             Btn_VérifierVisuel.Enabled = false;
             Cam_Visuel1.StopCapture();
 
-            //Affichage sur le coté gauche de l'image de l'utilisateur 
+            //// Affichage sur le coté gauche de l'image de l'utilisateur.
             string imgPrev = System.IO.Path.Combine(Application.StartupPath, cheminVersImageTemp);
             Bitmap bmp = new Bitmap(imgPrev);
             Img_identificationVisuelPreview.Image = bmp;
@@ -125,9 +125,9 @@ namespace ProjOXFORD_G2WinForm
 
                 //reloadPage();
 
-                //Comparaison du retour
+                //// Comparaison du retour.
 
-                //Si le visage à été reconnu
+                //// Si le visage a été reconnu.
                 if (compareFace != null && Convert.ToInt32(compareFace.GetValue("confidence")) >= 0.6)
                 {
                     Cam_Visuel1.Hide();
@@ -146,7 +146,7 @@ namespace ProjOXFORD_G2WinForm
                     Btn_continuerToMdp.Show();
                     Btn_continuerToMdp.Enabled = true;
                 }
-                //Si le visage n'a pas été reconnu
+                //Si le visage n'a pas été reconnu.
                 else
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Aucun utilisateur reconnu !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);

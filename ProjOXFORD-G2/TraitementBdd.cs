@@ -16,12 +16,7 @@ using MySql.Data.MySqlClient;  // Librairie de connexion à MySQL ajoutée en r�
 
 namespace ProjOXFORD_G2
 {
-    #region Documentation -----------------------------------------------------------------------------
     /// <summary> Classe qui va permettre la récupération des identifiants liés à la photo prise. </summary>
-    /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
-    #endregion
-
-    /// <summary> A traitement bdd. </summary>
     /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
     public static class TraitementBdd
     {
@@ -115,8 +110,8 @@ namespace ProjOXFORD_G2
             try
             {
                 OuvrirConnexion();
-                string nom = "";
-                string prenom = "";
+                string nom = string.Empty;
+                string prenom = string.Empty;
                 _cmd = new MySqlCommand(_requete, _connexion)
                 {
                     CommandType = CommandType.Text
@@ -128,7 +123,8 @@ namespace ProjOXFORD_G2
                     nom = reader.GetString(1);
                     prenom = reader.GetString(2);
                 }
-                string infosAffichees = nom.ToUpper() + " " + prenom;
+                //// Ecriture du nom et du prénom en respectant les majuscules.
+                string infosAffichees = nom.ToUpper() + " " + ReconnaissanceFaciale.PrenomToUpperFirstCase(prenom);
                 FermerConnexion();
                 return infosAffichees;
             }
@@ -215,9 +211,7 @@ namespace ProjOXFORD_G2
 
         /// <summary> L'événement créé en base de données sera de la catégorie Information. </summary>
         /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
-        /// <param name="utilisateur">
-        ///     ID de l'utilisateur ayant déclenché la remontée d'information.
-        /// </param>
+        /// <param name="utilisateur"> ID de l'utilisateur ayant déclenché la remontée d'information. </param>
         /// <param name="valeur">      Valeur de l'information. </param>
         public static void EventInfo(int utilisateur, string valeur)
         {
@@ -231,15 +225,15 @@ namespace ProjOXFORD_G2
             }
         }
 
-        /// <summary> L'événement créé en base de données sera de type Administration. </summary>
-        /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
+        /// <summary> L'événement créé en base de données sera de type Succès. </summary>
+        /// <remarks> Thomas LAURE, 29/11/2017. </remarks>
         /// <param name="utilisateur"> ID de l'utilisateur ayant déclenché l'événement de ce type. </param>
         /// <param name="valeur">      Valeur de l'événement. </param>
-        public static void EventAdmin(int utilisateur, string valeur)
+        public static void EventSucces(int utilisateur, string valeur)
         {
             try
             {
-                CreerEvent(utilisateur, 3, valeur);
+                CreerEvent(utilisateur, 4, valeur);
             }
             catch (Exception ex)
             {
