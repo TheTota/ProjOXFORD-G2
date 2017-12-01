@@ -110,7 +110,7 @@ namespace ProjOXFORD_G2
             //// Exécute the REST API call.
             response = await client.PostAsync(uri, content);
 
-            // Téléchargement du JSON de réponse.
+            //// Téléchargement du JSON de réponse.
             string contentString = await response.Content.ReadAsStringAsync();
             contentString = contentString.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
             if (contentString != string.Empty)
