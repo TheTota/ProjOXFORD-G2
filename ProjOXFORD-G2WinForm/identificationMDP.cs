@@ -1,4 +1,10 @@
-﻿using ProjOXFORD_G2;
+﻿//-----------------------------------------------------------------------
+// <copyright file="IdentificationMDP.cs" company="SIO">
+//     Copyright (c) SIO. All rights reserved.
+// </copyright>
+// <author>Loïc DELAUNAY</author>
+//-----------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,35 +14,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjOXFORD_G2;
 
 namespace ProjOXFORD_G2WinForm
 {
-    public partial class identificationMDP : MetroFramework.Forms.MetroForm
+    /// <summary> An identification mdp. </summary>
+    /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+    public partial class IdentificationMDP : MetroFramework.Forms.MetroForm
     {
-        string faceIdaTester;
+        /// <summary> The face ida tester. </summary>
+        private string _faceIdaTester;
 
-        public identificationMDP(string faceId)
+        /// <summary> Initializes a new instance of the <see cref="ProjOXFORD_G2WinForm.IdentificationMDP"/> class. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="faceId"> Face ID pour lequel le mot de passe ca être récupéré. </param>
+        public IdentificationMDP(string faceId)
         {
-            faceIdaTester = faceId;
+            this._faceIdaTester = faceId;
             InitializeComponent();
-
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
 
-        
-
-        private void identificationMDP_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Compare le mot de passe récupéré en BDD avec celui saisi par l'utilisateur dans le formulaire.
+        /// </summary>
+        /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire.</param>
+        /// <param name="faceId">Face ID pour lequel le mot de passe ca être récupéré.</param>
+        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
+        public static bool CompareMdp(IWin32Window owner, int mdpSaisi, string faceId)
         {
-
+            if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
+            {
+                MetroFramework.MetroMessageBox.Show(owner, "Mot de passe valide !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return true;
+            }
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(owner, "Mot de passe non valide !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+                return false;
+            }
         }
 
-        /// <summary>
-        /// Enmpéche de saisir autre chose que des nombres et empèche le dépassement de 4 chiffres.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <summary> Event handler. Called by IdentificationMDP for load events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
+        private void IdentificationMDP_Load(object sender, EventArgs e)
+        {
+        }
+
+        /// <summary> Enmpèche de saisir autre chose que des nombres et empèche le dépassement de 4
+        /// chiffres. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      . </param>
         private void TxtBox_MotDePasse_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(TxtBox_MotDePasse.Text, "[^0-9]"))
@@ -46,64 +79,111 @@ namespace ProjOXFORD_G2WinForm
             }
         }
 
+        /// <summary> Event handler. Called by TxtBox_MotDePasse for key press events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Key press event information. </param>
         private void TxtBox_MotDePasse_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(TxtBox_MotDePasse.Text.Length >= 4)
+            if (TxtBox_MotDePasse.Text.Length >= 4)
             {
                 MessageBox.Show("Le mot de passe ne peut pas dépasser 4 chiffres.");
             }
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP0 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP0_Click(object sender, EventArgs e)
         {
             SaisieMdp(0);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP1 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP1_Click(object sender, EventArgs e)
         {
             SaisieMdp(1);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP2 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP2_Click(object sender, EventArgs e)
         {
             SaisieMdp(2);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP3 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP3_Click(object sender, EventArgs e)
         {
             SaisieMdp(3);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP4 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP4_Click(object sender, EventArgs e)
         {
             SaisieMdp(4);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP5 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP5_Click(object sender, EventArgs e)
         {
             SaisieMdp(5);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP6 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP6_Click(object sender, EventArgs e)
         {
             SaisieMdp(6);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP7 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP7_Click(object sender, EventArgs e)
         {
             SaisieMdp(7);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP8 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP8_Click(object sender, EventArgs e)
         {
             SaisieMdp(8);
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDP9 for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDP9_Click(object sender, EventArgs e)
         {
             SaisieMdp(9);
         }
 
+        /// <summary> Saisie mdp. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="valeur"> The valeur. </param>
         private void SaisieMdp(int valeur)
         {
             if (TxtBox_MotDePasse.Text.Length >= 4)
@@ -118,11 +198,14 @@ namespace ProjOXFORD_G2WinForm
                 {
                     Pnl_ChiffreMdp.Enabled = false;
                     Btn_NombreMDPRetour.Enabled = true;
-
                 }
             }
         }
 
+        /// <summary> Event handler. Called by Btn_NombreMDPRetour for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_NombreMDPRetour_Click(object sender, EventArgs e)
         {
             Pnl_ChiffreMdp.Enabled = true;
@@ -136,41 +219,29 @@ namespace ProjOXFORD_G2WinForm
             }
         }
 
+        /// <summary> Event handler. Called by Btn_RetourMDP for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_RetourMDP_Click(object sender, EventArgs e)
         {
-            Form identificationVisuel = new identificationVisuel();
+            Form identificationVisuel = new IdentificationVisuel();
             identificationVisuel.Location = this.Location;
             identificationVisuel.StartPosition = FormStartPosition.Manual;
             identificationVisuel.Show();
             this.Close();
         }
 
-        /// <summary>
-        /// Compare le mot de passe récupéré en BDD avec celui saisi par l'utilisateur dans le formulaire.
-        /// </summary>
-        /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire.</param>
-        /// <param name="faceId">Face ID pour lequel le mot de passe ca être récupéré.</param>
-        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
-        public static bool CompareMdp(IWin32Window owner,int mdpSaisi, string faceId)
-        {
-            if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
-            {
-                MetroFramework.MetroMessageBox.Show(owner,"Mot de passe valide !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                return true;
-            }
-            else
-            {
-                MetroFramework.MetroMessageBox.Show(owner, "Mot de passe non valide !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
-                return false;
-            }
-        }
-
+        /// <summary> Event handler. Called by Btn_VerifierMDP for click events. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="sender"> . </param>
+        /// <param name="e">      Event information. </param>
         private void Btn_VerifierMDP_Click(object sender, EventArgs e)
         {
-            if (CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), faceIdaTester))
+            if (CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), _faceIdaTester))
             {
-                CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), faceIdaTester);
-                Form identificationVisuel = new IdentificationTermine(faceIdaTester);
+                CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), _faceIdaTester);
+                Form identificationVisuel = new IdentificationTermine(_faceIdaTester);
                 identificationVisuel.Location = this.Location;
                 identificationVisuel.StartPosition = FormStartPosition.Manual;
                 identificationVisuel.Show();

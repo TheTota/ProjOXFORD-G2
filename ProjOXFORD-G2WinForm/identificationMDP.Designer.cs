@@ -1,11 +1,70 @@
-﻿namespace ProjOXFORD_G2WinForm
+﻿//-----------------------------------------------------------------------
+// <copyright file="identificationMDP.Designer.cs" company="SIO">
+//     Copyright (c) SIO. All rights reserved.
+// </copyright>
+// <author>Loïc DELAUNAY</author>
+//-----------------------------------------------------------------------
+
+namespace ProjOXFORD_G2WinForm
 {
-    partial class identificationMDP
+    /// <content> An identification mdp. </content>
+    public partial class IdentificationMDP
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        /// <summary> The picture box 1 control. </summary>
+        private System.Windows.Forms.PictureBox pictureBox1;
+
+        /// <summary> The text titre 3 control. </summary>
+        private System.Windows.Forms.Label Txt_Titre3;
+
+        /// <summary> The text box mot de passe. </summary>
+        private MetroFramework.Controls.MetroTextBox TxtBox_MotDePasse;
+
+        /// <summary> The button verifier mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_VerifierMDP;
+
+        /// <summary> The button retour mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_RetourMDP;
+
+        /// <summary> The pnl chiffre mdp. </summary>
+        private MetroFramework.Controls.MetroPanel Pnl_ChiffreMdp;
+
+        /// <summary> The fourth button nombre mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP4;
+
+        /// <summary> The third button nombre mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP3;
+
+        /// <summary> The second button nombre mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP2;
+
+        /// <summary> The first button nombre mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP1;
+
+        /// <summary> The button nombre mdp 7. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP7;
+
+        /// <summary> The button nombre mdp 6. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP6;
+
+        /// <summary> The fifth button nombre mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP5;
+
+        /// <summary> The button nombre mdp 0. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP0;
+
+        /// <summary> The button nombre mdp 9. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP9;
+
+        /// <summary> The button nombre mdp 8. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDP8;
+
+        /// <summary> The button nombre mdp retour. </summary>
+        private MetroFramework.Controls.MetroButton Btn_NombreMDPRetour;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -13,10 +72,11 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -68,7 +128,7 @@
             // 
             this.TxtBox_MotDePasse.CustomButton.Image = null;
             this.TxtBox_MotDePasse.CustomButton.Location = new System.Drawing.Point(373, 2);
-            this.TxtBox_MotDePasse.CustomButton.Name = "";
+            this.TxtBox_MotDePasse.CustomButton.Name = string.Empty;
             this.TxtBox_MotDePasse.CustomButton.Size = new System.Drawing.Size(195, 195);
             this.TxtBox_MotDePasse.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtBox_MotDePasse.CustomButton.TabIndex = 1;
@@ -83,7 +143,7 @@
             this.TxtBox_MotDePasse.Name = "TxtBox_MotDePasse";
             this.TxtBox_MotDePasse.PasswordChar = '●';
             this.TxtBox_MotDePasse.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TxtBox_MotDePasse.SelectedText = "";
+            this.TxtBox_MotDePasse.SelectedText = string.Empty;
             this.TxtBox_MotDePasse.SelectionLength = 0;
             this.TxtBox_MotDePasse.SelectionStart = 0;
             this.TxtBox_MotDePasse.ShortcutsEnabled = true;
@@ -342,7 +402,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // identificationMDP
+            // IdentificationMDP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -354,8 +414,8 @@
             this.Controls.Add(this.TxtBox_MotDePasse);
             this.Controls.Add(this.Txt_Titre3);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "identificationMDP";
-            this.Load += new System.EventHandler(this.identificationMDP_Load);
+            this.Name = "IdentificationMDP";
+            this.Load += new System.EventHandler(this.IdentificationMDP_Load);
             this.Pnl_ChiffreMdp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -364,23 +424,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Txt_Titre3;
-        private MetroFramework.Controls.MetroTextBox TxtBox_MotDePasse;
-        private MetroFramework.Controls.MetroButton Btn_VerifierMDP;
-        private MetroFramework.Controls.MetroButton Btn_RetourMDP;
-        private MetroFramework.Controls.MetroPanel Pnl_ChiffreMdp;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP4;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP3;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP2;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP1;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP7;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP6;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP5;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP0;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP9;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDP8;
-        private MetroFramework.Controls.MetroButton Btn_NombreMDPRetour;
     }
 }

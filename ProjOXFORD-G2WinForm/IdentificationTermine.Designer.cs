@@ -1,11 +1,31 @@
-﻿namespace ProjOXFORD_G2WinForm
+﻿//-----------------------------------------------------------------------
+// <copyright file="IdentificationTermine.Designer.cs" company="SIO">
+//     Copyright (c) SIO. All rights reserved.
+// </copyright>
+// <author>Loïc DELAUNAY</author>
+//-----------------------------------------------------------------------
+
+namespace ProjOXFORD_G2WinForm
 {
-    partial class IdentificationTermine
+    /// <content> An identification termine. </content>
+    public partial class IdentificationTermine
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer _components = null;
+
+        /// <summary> The picture box 1 control. </summary>
+        private System.Windows.Forms.PictureBox pictureBox1;
+
+        /// <summary> The text titre 2 control. </summary>
+        private System.Windows.Forms.Label txtTitre2;
+
+        /// <summary> The text infos control. </summary>
+        private System.Windows.Forms.Label txtInfos;
+
+        /// <summary> The picture box 2 control. </summary>
+        private System.Windows.Forms.PictureBox pictureBox2;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -13,10 +33,11 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this._components != null))
             {
-                components.Dispose();
+                this._components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -29,37 +50,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdentificationTermine));
-            this.Txt_Titre2 = new System.Windows.Forms.Label();
-            this.Txt_infos = new System.Windows.Forms.Label();
+            this.txtTitre2 = new System.Windows.Forms.Label();
+            this.txtInfos = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Txt_Titre2
+            // txtTitre2
             // 
-            this.Txt_Titre2.AutoSize = true;
-            this.Txt_Titre2.Font = new System.Drawing.Font("Roboto Lt", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Titre2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Txt_Titre2.Location = new System.Drawing.Point(549, 60);
-            this.Txt_Titre2.Name = "Txt_Titre2";
-            this.Txt_Titre2.Size = new System.Drawing.Size(764, 67);
-            this.Txt_Titre2.TabIndex = 2;
-            this.Txt_Titre2.Text = "Vous avez bien été authentifié";
+            this.txtTitre2.AutoSize = true;
+            this.txtTitre2.Font = new System.Drawing.Font("Roboto Lt", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitre2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txtTitre2.Location = new System.Drawing.Point(549, 60);
+            this.txtTitre2.Name = "Txt_Titre2";
+            this.txtTitre2.Size = new System.Drawing.Size(764, 67);
+            this.txtTitre2.TabIndex = 2;
+            this.txtTitre2.Text = "Vous avez bien été authentifié";
             // 
-            // Txt_infos
+            // txtInfos
             // 
-            this.Txt_infos.AutoSize = true;
-            this.Txt_infos.Font = new System.Drawing.Font("Roboto Th", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_infos.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Txt_infos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Txt_infos.Location = new System.Drawing.Point(718, 281);
-            this.Txt_infos.Name = "Txt_infos";
-            this.Txt_infos.Size = new System.Drawing.Size(484, 65);
-            this.Txt_infos.TabIndex = 3;
-            this.Txt_infos.Text = "Bienvenue M. \"nom\"";
-            this.Txt_infos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtInfos.AutoSize = true;
+            this.txtInfos.Font = new System.Drawing.Font("Roboto Th", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfos.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txtInfos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtInfos.Location = new System.Drawing.Point(718, 281);
+            this.txtInfos.Name = "Txt_infos";
+            this.txtInfos.Size = new System.Drawing.Size(484, 65);
+            this.txtInfos.TabIndex = 3;
+            this.txtInfos.Text = "Bienvenue M. \"nom\"";
+            this.txtInfos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
@@ -87,8 +108,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.Txt_infos);
-            this.Controls.Add(this.Txt_Titre2);
+            this.Controls.Add(this.txtInfos);
+            this.Controls.Add(this.txtTitre2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "IdentificationTermine";
             this.Load += new System.EventHandler(this.IdentificationTermine_Load);
@@ -100,10 +121,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Txt_Titre2;
-        private System.Windows.Forms.Label Txt_infos;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
