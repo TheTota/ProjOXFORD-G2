@@ -51,7 +51,7 @@ namespace ProjOXFORD_G2WinForm
 
             foreach (WebCameraId camera in listCams)
             {
-                 List_Camera.Items.Add(camera.Name);
+                List_Camera.Items.Add(camera.Name);
             }
 
             List_Camera.SelectedIndex = 0;
@@ -121,6 +121,8 @@ namespace ProjOXFORD_G2WinForm
 
                 string faceId = Convert.ToString(resultatPhotoTemporaire.GetValue("faceId"));
 
+
+
                 JObject compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(faceId);
 
                 //reloadPage();
@@ -136,15 +138,27 @@ namespace ProjOXFORD_G2WinForm
 
                     faceIdReconnu = Convert.ToString(compareFace.GetValue("persistedFaceId"));
 
+                    if (TraitementBdd.Recupstatus(faceIdReconnu) == 0)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Utilisateur révoqué !", "REVOQUE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
 
-                    MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU",MessageBoxButtons.OK,MessageBoxIcon.Question);
-                    affichageInfoVisage(resultatPhotoTemporaire);
+                        Form identificationVisuel = new identification1();
+                        identificationVisuel.Location = this.Location;
+                        identificationVisuel.StartPosition = FormStartPosition.Manual;
+                        identificationVisuel.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        affichageInfoVisage(resultatPhotoTemporaire);
 
-                    Load_identificationVisuel.Hide();
-                    Txt_chargementMetro.Hide();
+                        Load_identificationVisuel.Hide();
+                        Txt_chargementMetro.Hide();
 
-                    Btn_continuerToMdp.Show();
-                    Btn_continuerToMdp.Enabled = true;
+                        Btn_continuerToMdp.Show();
+                        Btn_continuerToMdp.Enabled = true;
+                    }
                 }
                 //Si le visage n'a pas été reconnu.
                 else
@@ -154,7 +168,7 @@ namespace ProjOXFORD_G2WinForm
                     reloadPage();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MetroFramework.MetroMessageBox.Show(this, "ERREUR : " + ex.Message, "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error & MessageBoxIcon.Stop);
                 reloadPage();
@@ -218,14 +232,14 @@ namespace ProjOXFORD_G2WinForm
             float sideburns = (int)Infos["faceAttributes"]["facialHair"]["sideburns"];
             string glasses = (string)Infos["faceAttributes"]["glasses"];
 
-            Lbl_infoutilisateur.Text = "% de Sourir : " + smile*100 + "% \n";
+            Lbl_infoutilisateur.Text = "% de Sourir : " + smile * 100 + "% \n";
             Lbl_infoutilisateur.Text += "Sexe : " + gender + "\n";
             Lbl_infoutilisateur.Text += "Age : " + age + "\n";
-            Lbl_infoutilisateur.Text += "% de moustache : " + moustache*100 + "%\n";
-            Lbl_infoutilisateur.Text += "% de barbe : " + beard*100 + "%\n";
-            Lbl_infoutilisateur.Text += "% de rouflaquettes : " + sideburns*100 + "%\n";
+            Lbl_infoutilisateur.Text += "% de moustache : " + moustache * 100 + "%\n";
+            Lbl_infoutilisateur.Text += "% de barbe : " + beard * 100 + "%\n";
+            Lbl_infoutilisateur.Text += "% de rouflaquettes : " + sideburns * 100 + "%\n";
 
-            if(glasses == "ReadingGlasses")
+            if (glasses == "ReadingGlasses")
             {
                 Lbl_infoutilisateur.Text += "Porte des lunettes de lecture";
             }

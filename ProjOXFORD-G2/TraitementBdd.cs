@@ -240,5 +240,37 @@ namespace ProjOXFORD_G2
                 RenvoyerErreur(ex);
             }
         }
+
+        /// <summary>
+        /// Méthode qui permet de recuperer le status d'une personne
+        /// </summary>
+        /// <param name="faceId">The face identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">La requête n'a pu aboutir.\n" + ex.Message</exception>
+        public static int Recupstatus(string faceId)
+        {
+            _requete = @"SELECT status FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceId;";
+            try
+            {
+                OuvrirConnexion();
+                _cmd = new MySqlCommand(_requete, _connexion)
+                {
+                    CommandType = CommandType.Text
+                };
+                _cmd.Parameters.AddWithValue("@faceId", faceId);
+                var scalar = _cmd.ExecuteScalar();
+                FermerConnexion();
+                if (scalar is null)
+                {
+                    return -1;
+                }
+                return Convert.ToInt32(scalar);
+            }
+            catch (Exception ex)
+            {
+                FermerConnexion();
+                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+            }
+        }
     }
 }

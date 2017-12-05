@@ -52,3 +52,31 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\Pr
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.CoreCompileInputs.cache
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.exe
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.pdb
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2WinForm.exe.config
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2WinForm.exe
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2WinForm.pdb
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MetroFramework.Design.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MetroFramework.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\Microsoft.ProjectOxford.Common.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\Microsoft.ProjectOxford.Face.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\MySql.Data.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\WebEye.Controls.WinForms.WebCameraControl.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\WebEye.Controls.WinForms.WebCameraControl.pdb
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2.exe
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2.pdb
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\bin\Debug\ProjOXFORD-G2.exe.config
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csprojResolveAssemblyReference.cache
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.ProjOXFORD-G2WinForm.exe.config
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identification1.resources
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationMDP.resources
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.IdentificationTermine.resources
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.identificationVisuel.resources
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD_G2WinForm.Properties.Resources.resources
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.GenerateResource.Cache
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.csproj.CoreCompileInputs.cache
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.exe
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2WinForm\obj\Debug\ProjOXFORD-G2WinForm.pdb

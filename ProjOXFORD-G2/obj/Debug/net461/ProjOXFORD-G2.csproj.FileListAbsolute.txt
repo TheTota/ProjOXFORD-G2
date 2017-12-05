@@ -56,3 +56,24 @@ C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\Pr
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.exe
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.pdb
 C:\Users\LD\Desktop\Projet Recon\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.runtimeconfig.json
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.runtimeconfig.dev.json
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csprojResolveAssemblyReference.cache
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.ProjOXFORD-G2.exe.config
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.csproj.CoreCompileInputs.cache
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.AssemblyInfo.cs
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\obj\Debug\net461\ProjOXFORD-G2.pdb
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe.config
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.exe
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\ProjOXFORD-G2.pdb
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Design.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.Fonts.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MetroFramework.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\System.Net.Http.Extensions.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\System.Net.Http.Primitives.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Common.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Microsoft.ProjectOxford.Face.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\MySql.Data.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\Newtonsoft.Json.dll
+C:\Users\leoto\Source\Repos\ProjOXFORD-G2\ProjOXFORD-G2\bin\Debug\net461\WebEye.Controls.WinForms.WebCameraControl.dll
