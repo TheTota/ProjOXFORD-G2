@@ -137,7 +137,7 @@ namespace ProjOXFORD_G2WinForm
             Txt_chargementMetro.Show();
             Btn_RetourVisuel.Enabled = false;
             Btn_VérifierVisuel.Enabled = false;
-            Cam_Visuel1.StopCapture();
+            //Cam_Visuel1.StopCapture();
 
             //// Affichage sur le coté gauche de l'image de l'utilisateur.
             string imgPrev = System.IO.Path.Combine(Application.StartupPath, cheminVersImageTemp);
@@ -164,6 +164,18 @@ namespace ProjOXFORD_G2WinForm
                         MetroFramework.MetroMessageBox.Show(this, "Utilisateur révoqué !", "REVOQUE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
 
                         TraitementBdd.EventErreur(TraitementBdd.RecupIdUtilisateur(faceIdReconnu), "L'utilisateur révoqué a essayé de s'identifier.");
+
+                        Form identificationVisuel = new Identification1();
+                        identificationVisuel.Location = this.Location;
+                        identificationVisuel.StartPosition = FormStartPosition.Manual;
+                        identificationVisuel.Show();
+                        this.Close();
+                    }
+                    else if (compareFace != null && Convert.ToInt32(compareFace.GetValue("confidence")) == 42)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Votre profil a été supprimé !", "SUPPRIME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Error);
+
+                        TraitementBdd.EventErreur(TraitementBdd.RecupIdUtilisateur(faceIdReconnu), "Le profil de l'utilisateur qui a essayé de se connecter a été supprimé.");
 
                         Form identificationVisuel = new Identification1();
                         identificationVisuel.Location = this.Location;

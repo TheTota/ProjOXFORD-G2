@@ -188,13 +188,13 @@ namespace ProjOXFORD_G2
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new System.Net.NetworkCredential("sio.bonaparte@gmail.com", "Megabidon83");
+                smtp.Credentials = new System.Net.NetworkCredential("sio.bonaparte@gmail.com", "sCAtenTU");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception(ex.Message);
             }
         }
 
