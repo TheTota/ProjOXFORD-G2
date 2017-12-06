@@ -48,7 +48,7 @@ namespace ProjOXFORD_G2WinForm
             if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
             {
                 MetroFramework.MetroMessageBox.Show(owner, "Mot de passe valide !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                TraitementBdd.EventSucces(TraitementBdd.RecupIdUtilisateur(faceId), "L'utilisateur a bien été authentifier.");
+                TraitementBdd.EventSucces(TraitementBdd.RecupIdUtilisateur(faceId), "L'utilisateur a bien été authentifié.");
                 return true;
             }
             else
@@ -76,7 +76,7 @@ namespace ProjOXFORD_G2WinForm
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(TxtBox_MotDePasse.Text, "[^0-9]"))
             {
-                MetroFramework.MetroMessageBox.Show(this, "Merci de n'entrer que des chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+                MetroFramework.MetroMessageBox.Show(this, "Merci de ne saisir que des chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
                 TxtBox_MotDePasse.Text = TxtBox_MotDePasse.Text.Remove(TxtBox_MotDePasse.Text.Length - 1);
             }
         }
@@ -91,7 +91,7 @@ namespace ProjOXFORD_G2WinForm
             {
                 if (TxtBox_MotDePasse.Text.Length != 4)
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "Le mot de passe doit faire 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+                    MetroFramework.MetroMessageBox.Show(this, "Le mot de passe doit avoir 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
                 }
                 else
                 {

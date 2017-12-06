@@ -41,6 +41,12 @@ namespace ProjOXFORD_G2
         /// <summary> The URI face compare. </summary>
         private const string URI_FACE_COMPARE = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars";
 
+        /// <summary> Main entry-point for this application. </summary>
+        /// <remarks> Thomas LAURE, 06/12/2017. </remarks>
+        public static void Main()
+        {
+        }
+
         /// <summary>
         ///  Envoie une image sur les serveurs Microsoft et l'ajoute dans la facelist
         ///  Oxford et retourne un Face ID persistant.
