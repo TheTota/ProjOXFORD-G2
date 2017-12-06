@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ReconnaissanceFAciale.cs" company="SIO">
+// <copyright file="ReconnaissanceFaciale.cs" company="SIO">
 //     Copyright (c) SIO. All rights reserved.
 // </copyright>
 // <author>Loïc Delaunay</author>
@@ -21,17 +21,28 @@ using System.Threading.Tasks;
 namespace ProjOXFORD_G2
 {
     /// <summary> Classe principale de la reconnaissance faciale. </summary>
+    /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
     public class ReconnaissanceFaciale
     {
-        //// Lien de la clef Oxford.
+        /// <summary> Lien de la clef Oxford. </summary>
         private const string CLE_OXFORD = "c68422f56ead4a0b998fd07811bf0b05";
+        
+        //// URL de POST de demande.
+        
+        /// <summary> The URI base detect. </summary>
+        private const string URI_BASE_DETECT = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
 
-        //Url de POST de demande  
-        const string URI_BASE_DETECT = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
-        const string URI_BASE_VERIFY = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/verify";
-        const string URI_FACE_ADD = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/facelists/oxford/persistedFaces";
-        const string URI_FACE_COMPARE = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars";
+        /// <summary> The URI base verify. </summary>
+        private const string URI_BASE_VERIFY = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/verify";
 
+        /// <summary> The URI face add. </summary>
+        private const string URI_FACE_ADD = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/facelists/oxford/persistedFaces";
+
+        /// <summary> The URI face compare. </summary>
+        private const string URI_FACE_COMPARE = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars";
+
+        /// <summary> Main entry-point for this application. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
         public static void Main()
         {
             // MailErreur("C:\\Users\\LD\\Pictures\\Camera Roll\\zbeubzbeub.jpg");
@@ -74,14 +85,13 @@ namespace ProjOXFORD_G2
                 //// Création du fichier JSON.
                 data = JObject.Parse(JsonPrettyPrint(contentString));
             }
-            //Console.WriteLine(JsonPrettyPrint(contentString));
+            ////Console.WriteLine(JsonPrettyPrint(contentString));
             return Convert.ToString(data.GetValue("persistedFaceId"));
         }
 
-        /// <summary>
-        /// Compare un visage à la liste des faceId.
-        /// </summary>
-        /// <param name="faceId">Face ID à comparer.</param>
+        /// <summary> Compare un visage à la liste des faceId. </summary>
+        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
+        /// <param name="faceId"> Face ID à comparer. </param>
         /// <returns> Data. </returns>
         public static async Task<JObject> FaceRecCompareFaceAsync(string faceId)
         {
@@ -98,7 +108,7 @@ namespace ProjOXFORD_G2
 
             //// Génère une image temporaire pour la reconnaissance ICI PROBELEME
             //// JObject tempFaceAdd = await FaceRecCreateFaceIdTempAsync(imageFilePath);
-            //string faceId = Convert.ToString(tempFaceAdd.GetValue("faceId"));
+            //// string faceId = Convert.ToString(tempFaceAdd.GetValue("faceId"));
 
             //// Body de la requête.
             string contentBefore = "{\"faceId\":\"" + faceId + "\",\"faceListId\":\"" + "oxford" + "\", \"maxNumOfCandidatesReturned\":1, \"mode\": \"matchPerson\"}";
@@ -123,16 +133,17 @@ namespace ProjOXFORD_G2
             }
 
             //// Converti en objet Java.
-            //data = JObject.Parse(JsonPrettyPrint(contentString));
+            //// data = JObject.Parse(JsonPrettyPrint(contentString));
 
             return data;
-            //Convert.ToString(data.GetValue("faceId"));
+            //// Convert.ToString(data.GetValue("faceId"));
         }
 
         /// <summary>
         /// Créer un faceId temporaire avec le chemin d'une image.
         /// </summary>
         /// <param name="imageFilePath">Chemin de l'image.</param>
+        /// <returns> Data. </returns>
         public static async Task<JObject> FaceRecCreateFaceIdTempAsync(string imageFilePath)
         {
             HttpClient client = new HttpClient();

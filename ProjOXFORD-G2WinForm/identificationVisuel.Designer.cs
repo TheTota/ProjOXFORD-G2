@@ -1,14 +1,60 @@
-﻿using WebEye.Controls.WinForms.WebCameraControl;
+﻿//-----------------------------------------------------------------------
+// <copyright file="identificationVisuel.Designer.cs" company="SIO">
+//     Copyright (c) SIO. All rights reserved.
+// </copyright>
+// <author>Loïc DELAUNAY</author>
+//-----------------------------------------------------------------------
+
+using WebEye.Controls.WinForms.WebCameraControl;
 
 namespace ProjOXFORD_G2WinForm
-
 {
-    partial class identificationVisuel
+    /// <content> An identification visuel. </content>
+    public partial class IdentificationVisuel
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer _components = null;
+
+        /// <summary> The image logo ox control. </summary>
+        private System.Windows.Forms.PictureBox Img_LogoOX;
+
+        /// <summary> The text titre 2 control. </summary>
+        private System.Windows.Forms.Label txtTitre2;
+
+        /// <summary> The webcam. </summary>
+        private WebCameraControl webcam;
+
+        /// <summary> The button retour visuel. </summary>
+        private MetroFramework.Controls.MetroButton Btn_RetourVisuel;
+
+        /// <summary> The button vérifier visuel. </summary>
+        private MetroFramework.Controls.MetroButton Btn_VérifierVisuel;
+
+        /// <summary> The first camera visuel. </summary>
+        private WebCameraControl Cam_Visuel1;
+
+        /// <summary> The list camera control. </summary>
+        private System.Windows.Forms.ListBox List_Camera;
+
+        /// <summary> The image identification visuel preview control. </summary>
+        private System.Windows.Forms.PictureBox Img_identificationVisuelPreview;
+
+        /// <summary> The load identification visuel. </summary>
+        private MetroFramework.Controls.MetroProgressSpinner Load_identificationVisuel;
+
+        /// <summary> The text chargement metro. </summary>
+        private MetroFramework.Controls.MetroLabel Txt_chargementMetro;
+
+        /// <summary> The label infoutilisateur control. </summary>
+        private System.Windows.Forms.Label Lbl_infoutilisateur;
+
+        /// <summary> The image preview user reconnu control. </summary>
+        private System.Windows.Forms.PictureBox Img_previewUserReconnu;
+
+        /// <summary> The button continuer to mdp. </summary>
+        private MetroFramework.Controls.MetroButton Btn_continuerToMdp;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -16,10 +62,11 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this._components != null))
             {
-                components.Dispose();
+                this._components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -31,8 +78,8 @@ namespace ProjOXFORD_G2WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.Txt_Titre2 = new System.Windows.Forms.Label();
-            this.Webcam = new WebEye.Controls.WinForms.WebCameraControl.WebCameraControl();
+            this.txtTitre2 = new System.Windows.Forms.Label();
+            this.webcam = new WebEye.Controls.WinForms.WebCameraControl.WebCameraControl();
             this.Btn_RetourVisuel = new MetroFramework.Controls.MetroButton();
             this.Btn_VérifierVisuel = new MetroFramework.Controls.MetroButton();
             this.Cam_Visuel1 = new WebEye.Controls.WinForms.WebCameraControl.WebCameraControl();
@@ -49,23 +96,23 @@ namespace ProjOXFORD_G2WinForm
             ((System.ComponentModel.ISupportInitialize)(this.Img_LogoOX)).BeginInit();
             this.SuspendLayout();
             // 
-            // Txt_Titre2
+            // txtTitre2
             // 
-            this.Txt_Titre2.AutoSize = true;
-            this.Txt_Titre2.Font = new System.Drawing.Font("Roboto Th", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Titre2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Txt_Titre2.Location = new System.Drawing.Point(513, 41);
-            this.Txt_Titre2.Name = "Txt_Titre2";
-            this.Txt_Titre2.Size = new System.Drawing.Size(894, 65);
-            this.Txt_Titre2.TabIndex = 1;
-            this.Txt_Titre2.Text = "Merci de vous placer face à la camera";
+            this.txtTitre2.AutoSize = true;
+            this.txtTitre2.Font = new System.Drawing.Font("Roboto Th", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitre2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txtTitre2.Location = new System.Drawing.Point(513, 41);
+            this.txtTitre2.Name = "Txt_Titre2";
+            this.txtTitre2.Size = new System.Drawing.Size(894, 65);
+            this.txtTitre2.TabIndex = 1;
+            this.txtTitre2.Text = "Merci de vous placer face à la camera";
             // 
-            // Webcam
+            // webcam
             // 
-            this.Webcam.Location = new System.Drawing.Point(0, 0);
-            this.Webcam.Name = "Webcam";
-            this.Webcam.Size = new System.Drawing.Size(150, 150);
-            this.Webcam.TabIndex = 0;
+            this.webcam.Location = new System.Drawing.Point(0, 0);
+            this.webcam.Name = "webcam";
+            this.webcam.Size = new System.Drawing.Size(150, 150);
+            this.webcam.TabIndex = 0;
             // 
             // Btn_RetourVisuel
             // 
@@ -205,7 +252,7 @@ namespace ProjOXFORD_G2WinForm
             this.Img_LogoOX.TabIndex = 0;
             this.Img_LogoOX.TabStop = false;
             // 
-            // identificationVisuel
+            // IdentificationVisuel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,10 +266,10 @@ namespace ProjOXFORD_G2WinForm
             this.Controls.Add(this.Cam_Visuel1);
             this.Controls.Add(this.Btn_VérifierVisuel);
             this.Controls.Add(this.Btn_RetourVisuel);
-            this.Controls.Add(this.Txt_Titre2);
+            this.Controls.Add(this.txtTitre2);
             this.Controls.Add(this.Img_LogoOX);
             this.Controls.Add(this.Img_previewUserReconnu);
-            this.Name = "identificationVisuel";
+            this.Name = "IdentificationVisuel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Load += new System.EventHandler(this.identificationVisuel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Img_previewUserReconnu)).EndInit();
@@ -234,19 +281,5 @@ namespace ProjOXFORD_G2WinForm
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox Img_LogoOX;
-        private System.Windows.Forms.Label Txt_Titre2;
-        private WebCameraControl Webcam;
-        private MetroFramework.Controls.MetroButton Btn_RetourVisuel;
-        private MetroFramework.Controls.MetroButton Btn_VérifierVisuel;
-        private WebCameraControl Cam_Visuel1;
-        private System.Windows.Forms.ListBox List_Camera;
-        private System.Windows.Forms.PictureBox Img_identificationVisuelPreview;
-        private MetroFramework.Controls.MetroProgressSpinner Load_identificationVisuel;
-        private MetroFramework.Controls.MetroLabel Txt_chargementMetro;
-        private System.Windows.Forms.Label Lbl_infoutilisateur;
-        private System.Windows.Forms.PictureBox Img_previewUserReconnu;
-        private MetroFramework.Controls.MetroButton Btn_continuerToMdp;
     }
 }

@@ -242,12 +242,12 @@ namespace ProjOXFORD_G2
         }
 
         /// <summary>
-        /// Méthode qui permet de recuperer le status d'une personne
+        /// Méthode qui permet de récuperer le statut d'une personne.
         /// </summary>
         /// <param name="faceId">The face identifier.</param>
-        /// <returns></returns>
+        /// <returns> Le statut du visiteur si celui-ci est enregistré, ou -1 si l'accès est révoqué.</returns>
         /// <exception cref="Exception">La requête n'a pu aboutir.\n" + ex.Message</exception>
-        public static int Recupstatus(string faceId)
+        public static int RecupStatus(string faceId)
         {
             _requete = @"SELECT status FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceId;";
             try
@@ -264,6 +264,7 @@ namespace ProjOXFORD_G2
                 {
                     return -1;
                 }
+
                 return Convert.ToInt32(scalar);
             }
             catch (Exception ex)
