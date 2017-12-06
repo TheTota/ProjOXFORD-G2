@@ -163,6 +163,33 @@ namespace ProjOXFORD_G2
             }
         }
 
+        /// <summary> Récupère l'identifiant de l'utilisateur en fonction de son face ID. </summary>
+        /// <remarks> Thomas LAURE, 06/12/2017. </remarks>
+        /// <exception cref="Exception"> Thrown when an exception error condition occurs. </exception>
+        /// <param name="faceId"> Face ID de la personne dont on veut récupérer l'identifiant. </param>
+        /// <returns> L'identifiant de la personne liée au face ID en paramètre. </returns>
+        public static int RecupIdUtilisateur(string faceId)
+        {
+            _requete = @"SELECT id FROM users WHERE faceid = @faceId;";
+            try
+            {
+                OuvrirConnexion();
+                _cmd = new MySqlCommand(_requete, _connexion)
+                {
+                    CommandType = CommandType.Text
+                };
+                _cmd.Parameters.AddWithValue("@faceId", faceId);
+                var scalar = _cmd.ExecuteScalar();
+                FermerConnexion();
+                return Convert.ToInt32(scalar);
+            }
+            catch (Exception ex)
+            {
+                FermerConnexion();
+                throw new Exception("La requête n'a pu aboutir.\n" + ex.Message);
+            }
+        }
+
         /// <summary> Méthode qui insert un événement dans la table Events en base de données. </summary>
         /// <remarks> Thomas LAURE, 22/11/2017. </remarks>
         /// <param name="utilisateur"> Utilisateur ayant déclenché l'événement. </param>
