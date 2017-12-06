@@ -271,7 +271,7 @@ namespace ProjOXFORD_G2WinForm
             this.Controls.Add(this.Img_previewUserReconnu);
             this.Name = "IdentificationVisuel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
-            this.Load += new System.EventHandler(this.identificationVisuel_Load);
+            this.Load += new System.EventHandler(this.IdentificationVisuel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Img_previewUserReconnu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Img_identificationVisuelPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Img_LogoOX)).EndInit();

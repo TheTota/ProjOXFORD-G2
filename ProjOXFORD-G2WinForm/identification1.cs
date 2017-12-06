@@ -23,7 +23,7 @@ namespace ProjOXFORD_G2WinForm
     /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
     public partial class Identification1 : MetroFramework.Forms.MetroForm
     {
-        /// <summary> Initialises a new instance of the ProjOXFORD_G2WinForm.Identification1 class. </summary>
+        /// <summary> Initializes a new instance of the <see cref="ProjOXFORD_G2WinForm.Identification1"/> class. </summary>
         /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
         public Identification1()
         {
@@ -31,12 +31,10 @@ namespace ProjOXFORD_G2WinForm
 
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
-
-            //// Ajout de la transparence sur le lock
-            imgTopper1.Controls.Add(imgUnlock);
+            //// Ajout de la transparence sur le lock.
+            this.imgTopper1.Controls.Add(this.imgUnlock);
             imgUnlock.BackColor = Color.Transparent;
-            TxtAnimation();
+            this.TxtAnimation();
         }
 
         /// <summary> Event handler. Called by Form1 for load events. </summary>
@@ -53,7 +51,7 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Event information. </param>
         private void Txt_Titre_Click(object sender, EventArgs e)
         {
-            GoToIdentificationVisuel();
+            this.GoToIdentificationVisuel();
         }
 
         /// <summary> Event handler. Called by label1 for click events. </summary>
@@ -62,7 +60,7 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Event information. </param>
         private void Label1_Click(object sender, EventArgs e)
         {
-            GoToIdentificationVisuel();
+            this.GoToIdentificationVisuel();
         }
 
         /// <summary> Event handler. Called by imgTopper1 for click events. </summary>
@@ -71,7 +69,7 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Event information. </param>
         private void Img_Topper1_Click(object sender, EventArgs e)
         {
-            GoToIdentificationVisuel();
+            this.GoToIdentificationVisuel();
         }
 
         /// <summary> Text animation. </summary>
@@ -88,7 +86,7 @@ namespace ProjOXFORD_G2WinForm
                 txtSousTitre1.Visible = true;
             }
 
-            TxtAnimation();
+            this.TxtAnimation();
         }
 
         /// <summary> Event handler. Called by imgUnlock for click events. </summary>
@@ -97,7 +95,7 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Event information. </param>
         private void Img_Unlock_Click(object sender, EventArgs e)
         {
-            GoToIdentificationVisuel();
+            this.GoToIdentificationVisuel();
         }
 
         /// <summary> Go to identification visuel. </summary>

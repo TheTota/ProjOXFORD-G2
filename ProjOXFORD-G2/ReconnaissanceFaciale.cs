@@ -41,13 +41,6 @@ namespace ProjOXFORD_G2
         /// <summary> The URI face compare. </summary>
         private const string URI_FACE_COMPARE = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/findsimilars";
 
-        /// <summary> Main entry-point for this application. </summary>
-        /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
-        public static void Main()
-        {
-            // MailErreur("C:\\Users\\LD\\Pictures\\Camera Roll\\zbeubzbeub.jpg");
-        }
-
         /// <summary>
         ///  Envoie une image sur les serveurs Microsoft et l'ajoute dans la facelist
         ///  Oxford et retourne un Face ID persistant.
@@ -85,7 +78,7 @@ namespace ProjOXFORD_G2
                 //// Création du fichier JSON.
                 data = JObject.Parse(JsonPrettyPrint(contentString));
             }
-            ////Console.WriteLine(JsonPrettyPrint(contentString));
+
             return Convert.ToString(data.GetValue("persistedFaceId"));
         }
 
@@ -97,29 +90,18 @@ namespace ProjOXFORD_G2
         {
             HttpClient client = new HttpClient();
             JObject data;
-
             //// Entête de la demande.
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", CLE_OXFORD);
-
             //// Assemblage de la requete URL.
             string uri = URI_FACE_COMPARE;
-
             HttpResponseMessage response;
-
-            //// Génère une image temporaire pour la reconnaissance ICI PROBELEME
-            //// JObject tempFaceAdd = await FaceRecCreateFaceIdTempAsync(imageFilePath);
-            //// string faceId = Convert.ToString(tempFaceAdd.GetValue("faceId"));
-
             //// Body de la requête.
             string contentBefore = "{\"faceId\":\"" + faceId + "\",\"faceListId\":\"" + "oxford" + "\", \"maxNumOfCandidatesReturned\":1, \"mode\": \"matchPerson\"}";
             StringContent content = new StringContent(contentBefore);
-
             //// Header content type de la requête.
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
             //// Exécute the REST API call.
             response = await client.PostAsync(uri, content);
-
             //// Téléchargement du JSON de réponse.
             string contentString = await response.Content.ReadAsStringAsync();
             contentString = contentString.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
@@ -132,11 +114,7 @@ namespace ProjOXFORD_G2
                 return null;
             }
 
-            //// Converti en objet Java.
-            //// data = JObject.Parse(JsonPrettyPrint(contentString));
-
             return data;
-            //// Convert.ToString(data.GetValue("faceId"));
         }
 
         /// <summary>
@@ -148,29 +126,21 @@ namespace ProjOXFORD_G2
         {
             HttpClient client = new HttpClient();
             JObject data;
-
             //// Entête de la demande.
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", CLE_OXFORD);
-
             //// Paramètre de la requête.
             string requestParameters = "returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise";
-
             //// Assemblage de la requête URL.
             string uri = URI_BASE_DETECT + "?" + requestParameters;
-
             HttpResponseMessage response;
-
             //// Mise en cache sous format binaire.
             byte[] byteData = GetImageAsByteArray(imageFilePath);
-
             using (ByteArrayContent content = new ByteArrayContent(byteData))
             {
                 //// Header content type de la requete
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-
                 //// Execute la demande de POST
                 response = await client.PostAsync(uri, content);
-
                 //// Téléchargement du JSON de réponse.
                 string contentString = await response.Content.ReadAsStringAsync();
                 contentString = contentString.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
@@ -199,7 +169,6 @@ namespace ProjOXFORD_G2
             {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-
                 message.From = new MailAddress("sio.bonaparte@gmail.com");
                 message.To.Add(new MailAddress("bts-sio@lyc-bonaparte.fr"));
                 message.Subject = "Inscription";
@@ -209,7 +178,6 @@ namespace ProjOXFORD_G2
                     "\n Cette personne a tenté  de pénétrer dans l'enceinte de l'entreprise sans l'autorisation." +
                     "\n Merci de prendre les mesures adaptées.";
                 message.Attachments.Add(photo);
-
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
@@ -266,13 +234,11 @@ namespace ProjOXFORD_G2
             }
                 
             json = json.Replace(Environment.NewLine, string.Empty).Replace("\t", string.Empty);
-
             StringBuilder sb = new StringBuilder();
             bool quote = false;
             bool ignore = false;
             int offset = 0;
             int indentLength = 3;
-
             foreach (char ch in json)
             {
                 switch (ch)

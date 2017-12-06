@@ -52,7 +52,7 @@ namespace ProjOXFORD_G2WinForm
         /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e">      Event information. </param>
-        private void identificationVisuel_Load(object sender, EventArgs e)
+        private void IdentificationVisuel_Load(object sender, EventArgs e)
         {
             Load_identificationVisuel.Hide();
             Txt_chargementMetro.Hide();
@@ -60,8 +60,10 @@ namespace ProjOXFORD_G2WinForm
             Img_previewUserReconnu.Hide();
             Btn_continuerToMdp.Hide();
             Btn_continuerToMdp.Enabled = false;
+
             //// Chemin vers le dossier temporaire de l'application.
             cheminVersDossierTemp = cheminRacine + "\\temp";
+
             //// Liste les caméras.
             listCams = Cam_Visuel1.GetVideoCaptureDevices().ToList<WebCameraId>();
 
@@ -80,7 +82,7 @@ namespace ProjOXFORD_G2WinForm
                 MessageBox.Show(ex.Message, "ATTENTION !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            // Crée le dossier temporaire s'il n'existe pas.
+            //// Crée le dossier temporaire s'il n'existe pas.
             if (!System.IO.Directory.Exists(cheminVersDossierTemp))
             {
                 Directory.CreateDirectory(cheminVersDossierTemp);
@@ -136,6 +138,7 @@ namespace ProjOXFORD_G2WinForm
             Btn_RetourVisuel.Enabled = false;
             Btn_VérifierVisuel.Enabled = false;
             Cam_Visuel1.StopCapture();
+
             //// Affichage sur le coté gauche de l'image de l'utilisateur.
             string imgPrev = System.IO.Path.Combine(Application.StartupPath, cheminVersImageTemp);
             Bitmap bmp = new Bitmap(imgPrev);
@@ -146,7 +149,6 @@ namespace ProjOXFORD_G2WinForm
                 JObject resultatPhotoTemporaire = await ReconnaissanceFaciale.FaceRecCreateFaceIdTempAsync(cheminVersImageTemp);
                 string faceId = Convert.ToString(resultatPhotoTemporaire.GetValue("faceId"));
                 JObject compareFace = await ReconnaissanceFaciale.FaceRecCompareFaceAsync(faceId);
-                ////ReloadPage();
                 //// Comparaison du retour.
                 //// Si le visage a été reconnu.
                 if (compareFace != null && Convert.ToInt32(compareFace.GetValue("confidence")) >= 0.6)

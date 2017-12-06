@@ -33,11 +33,10 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="faceId"> Identifier for the face. </param>
         public IdentificationTermine(string faceId)
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this._faceId = faceId;
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
         }
 
         /// <summary> Event handler. Called by IdentificationTermine for load events. </summary>
@@ -46,7 +45,7 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Event information. </param>
         private void IdentificationTermine_Load(object sender, EventArgs e)
         {
-            WaitAndReload();
+            this.WaitAndReload();
             txtInfos.Text = "Bienvenue M. " + TraitementBdd.RecupInfosUser(this._faceId);
         }
 

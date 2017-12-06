@@ -31,18 +31,18 @@ namespace ProjOXFORD_G2WinForm
         public IdentificationMDP(string faceId)
         {
             this._faceIdATester = faceId;
-            InitializeComponent();
+            this.InitializeComponent();
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
         }
 
-        /// <summary>
-        /// Compare le mot de passe récupéré en BDD avec celui saisi par l'utilisateur dans le formulaire.
-        /// </summary>
-        /// <param name="mdpSaisi">Mot de passe saisi dans le formulaire.</param>
-        /// <param name="faceId">Face ID pour lequel le mot de passe ca être récupéré.</param>
-        /// <returns>True s'il y a correpondance, sinon retourne False.</returns>
+        /// <summary> Compare le mot de passe récupéré en BDD avec celui saisi par l'utilisateur dans le
+        /// formulaire. </summary>
+        /// <remarks> Thomas LAURE, 06/12/2017. </remarks>
+        /// <param name="owner">    The owner. </param>
+        /// <param name="mdpSaisi"> Mot de passe saisi dans le formulaire. </param>
+        /// <param name="faceId">   Face ID pour lequel le mot de passe ca être récupéré. </param>
+        /// <returns> True s'il y a correpondance, sinon retourne False. </returns>
         public static bool CompareMdp(IWin32Window owner, int mdpSaisi, string faceId)
         {
             if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
@@ -87,13 +87,11 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Key press event information. </param>
         private void TxtBox_MotDePasse_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (e.KeyChar == (char)13)
             {
                 if (TxtBox_MotDePasse.Text.Length != 4)
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Le mot de passe doit faire 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
-
                 }
                 else
                 {
@@ -103,10 +101,7 @@ namespace ProjOXFORD_G2WinForm
             else if (TxtBox_MotDePasse.Text.Length >= 4)
             {
                 MetroFramework.MetroMessageBox.Show(this, "Le mot de passe ne peut pas dépasser 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
-
             }
-
-
         }
 
         /// <summary> Event handler. Called by Btn_NombreMDP0 for click events. </summary>
@@ -207,7 +202,6 @@ namespace ProjOXFORD_G2WinForm
             if (TxtBox_MotDePasse.Text.Length >= 4)
             {
                 MetroFramework.MetroMessageBox.Show(this, "Le mot de passe ne peut pas dépasser 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
-
             }
             else
             {
