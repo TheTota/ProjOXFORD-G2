@@ -22,7 +22,9 @@ namespace ProjOXFORD_G2
     {
         /// <summary> Membre privé contenant les informations de connexion à la base de données. Le @ sert
         /// à prendre la chaîne de caractères telle quelle. </summary>
-        private const string CNX = @"Server=mysql-oxfordbonaparte.alwaysdata.net; Port=3306; Database=oxfordbonaparte_db; Uid=148178; Pwd=ToRYolOU;";
+
+        //private const string CNX = @"Server=mysql-oxfordbonaparte.alwaysdata.net; Port=3306; Database=oxfordbonaparte_db; Uid=148178; Pwd=ToRYolOU;";
+        private const string CNX = @"Server=mysql-simubac.alwaysdata.net; Port=3306; Database=simubac_oxford; Uid=simubac; Pwd=aDemantA;";
 
         /// <summary> Déclaration d'un objet de la classe MysqlConnection. Va être utilisé pour gérer la
         /// connexion à la base de données MySQL. </summary>
@@ -170,7 +172,7 @@ namespace ProjOXFORD_G2
         /// <returns> L'identifiant de la personne liée au face ID en paramètre. </returns>
         public static int RecupIdUtilisateur(string faceId)
         {
-            _requete = @"SELECT id FROM users WHERE faceid = @faceId;";
+            _requete = @"SELECT users.id FROM users INNER JOIN photos ON users.photo = photos.id WHERE faceid = @faceId;";
             try
             {
                 OuvrirConnexion();

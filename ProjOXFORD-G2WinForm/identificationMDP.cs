@@ -23,18 +23,18 @@ namespace ProjOXFORD_G2WinForm
     public partial class IdentificationMDP : MetroFramework.Forms.MetroForm
     {
         /// <summary> The face ida tester. </summary>
-        private string _faceIdaTester;
+        private string _faceIdATester;
 
         /// <summary> Initializes a new instance of the <see cref="ProjOXFORD_G2WinForm.IdentificationMDP"/> class. </summary>
         /// <remarks> Thomas LAURE, 05/12/2017. </remarks>
         /// <param name="faceId"> Face ID pour lequel le mot de passe ca être récupéré. </param>
         public IdentificationMDP(string faceId)
         {
-            this._faceIdaTester = faceId;
+            this._faceIdATester = faceId;
             InitializeComponent();
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         /// <summary>
@@ -48,11 +48,13 @@ namespace ProjOXFORD_G2WinForm
             if (TraitementBdd.RecupMdp(faceId) == mdpSaisi)
             {
                 MetroFramework.MetroMessageBox.Show(owner, "Mot de passe valide !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                TraitementBdd.EventSucces(TraitementBdd.RecupIdUtilisateur(faceId), "L'utilisateur a bien été authentifier.");
                 return true;
             }
             else
             {
                 MetroFramework.MetroMessageBox.Show(owner, "Mot de passe non valide !", "NON RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+                TraitementBdd.EventErreur(TraitementBdd.RecupIdUtilisateur(faceId), "L'utilisateur a entré le mauvais mot de passe.");
                 return false;
             }
         }
@@ -74,7 +76,7 @@ namespace ProjOXFORD_G2WinForm
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(TxtBox_MotDePasse.Text, "[^0-9]"))
             {
-                MessageBox.Show("Merci de n'entrer que des chiffres.");
+                MetroFramework.MetroMessageBox.Show(this, "Merci de n'entrer que des chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
                 TxtBox_MotDePasse.Text = TxtBox_MotDePasse.Text.Remove(TxtBox_MotDePasse.Text.Length - 1);
             }
         }
@@ -85,10 +87,26 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Key press event information. </param>
         private void TxtBox_MotDePasse_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (TxtBox_MotDePasse.Text.Length >= 4)
+
+            if (e.KeyChar == (char)13)
             {
-                MessageBox.Show("Le mot de passe ne peut pas dépasser 4 chiffres.");
+                if (TxtBox_MotDePasse.Text.Length != 4)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Le mot de passe doit faire 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+
+                }
+                else
+                {
+                    VerifierMDP();
+                }
             }
+            else if (TxtBox_MotDePasse.Text.Length >= 4)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Le mot de passe ne peut pas dépasser 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+
+            }
+
+
         }
 
         /// <summary> Event handler. Called by Btn_NombreMDP0 for click events. </summary>
@@ -188,7 +206,8 @@ namespace ProjOXFORD_G2WinForm
         {
             if (TxtBox_MotDePasse.Text.Length >= 4)
             {
-                MessageBox.Show("Le mot de passe ne peut pas dépasser 4 chiffres.");
+                MetroFramework.MetroMessageBox.Show(this, "Le mot de passe ne peut pas dépasser 4 chiffres.", "ATTENTION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
+
             }
             else
             {
@@ -238,14 +257,23 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="e">      Event information. </param>
         private void Btn_VerifierMDP_Click(object sender, EventArgs e)
         {
-            if (CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), _faceIdaTester))
+            VerifierMDP();
+        }
+
+        private void VerifierMDP()
+        {
+            Btn_VerifierMDP.Enabled = false;
+            if (CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), _faceIdATester))
             {
-                CompareMdp(this, Convert.ToInt16(TxtBox_MotDePasse.Text), _faceIdaTester);
-                Form identificationVisuel = new IdentificationTermine(_faceIdaTester);
+                Form identificationVisuel = new IdentificationTermine(_faceIdATester);
                 identificationVisuel.Location = this.Location;
                 identificationVisuel.StartPosition = FormStartPosition.Manual;
                 identificationVisuel.Show();
                 this.Close();
+            }
+            else
+            {
+                Btn_VerifierMDP.Enabled = true;
             }
         }
     }

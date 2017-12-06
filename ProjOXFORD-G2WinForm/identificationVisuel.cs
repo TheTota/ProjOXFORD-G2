@@ -46,7 +46,6 @@ namespace ProjOXFORD_G2WinForm
             InitializeComponent();
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
         }
 
         /// <summary> Event handler. Called by IdentificationVisuel for load events. </summary>
@@ -131,6 +130,7 @@ namespace ProjOXFORD_G2WinForm
         /// <param name="cheminVersImageTemp"> The chemin vers image temporary. </param>
         private async void TestImage(string cheminVersImageTemp)
         {
+            TraitementBdd.EventInfo(1337, "Un utilisateur est en train de s'identifier visuellement");
             Load_identificationVisuel.Show();
             Txt_chargementMetro.Show();
             Btn_RetourVisuel.Enabled = false;
@@ -161,6 +161,8 @@ namespace ProjOXFORD_G2WinForm
                     {
                         MetroFramework.MetroMessageBox.Show(this, "Utilisateur révoqué !", "REVOQUE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation & MessageBoxIcon.Warning);
 
+                        TraitementBdd.EventErreur(TraitementBdd.RecupIdUtilisateur(faceIdReconnu), "L'utilisateur révoqué a essayé de s'identifier.");
+
                         Form identificationVisuel = new Identification1();
                         identificationVisuel.Location = this.Location;
                         identificationVisuel.StartPosition = FormStartPosition.Manual;
@@ -171,6 +173,8 @@ namespace ProjOXFORD_G2WinForm
                     {
                         MetroFramework.MetroMessageBox.Show(this, "Vous avez bien été reconnu !", "RECONNU", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         AffichageInfoVisage(resultatPhotoTemporaire);
+
+                        TraitementBdd.EventSucces(TraitementBdd.RecupIdUtilisateur(faceIdReconnu), "L'utilisateur a été reconnu visuellement.");
 
                         Load_identificationVisuel.Hide();
                         Txt_chargementMetro.Hide();
@@ -253,10 +257,11 @@ namespace ProjOXFORD_G2WinForm
             float smile = (int)Infos["faceAttributes"]["smile"];
             string gender = (string)Infos["faceAttributes"]["gender"];
             string age = (string)Infos["faceAttributes"]["age"];
-            float moustache = (int)Infos["faceAttributes"]["facialHair"]["moustache"];
-            float beard = (int)Infos["faceAttributes"]["facialHair"]["beard"];
-            float sideburns = (int)Infos["faceAttributes"]["facialHair"]["sideburns"];
+            float moustache = (float)Infos["faceAttributes"]["facialHair"]["moustache"];
+            float beard = (float)Infos["faceAttributes"]["facialHair"]["beard"];
+            float sideburns = (float)Infos["faceAttributes"]["facialHair"]["sideburns"];
             string glasses = (string)Infos["faceAttributes"]["glasses"];
+
             Lbl_infoutilisateur.Text = "% de Sourir : " + smile * 100 + "% \n";
             Lbl_infoutilisateur.Text += "Sexe : " + gender + "\n";
             Lbl_infoutilisateur.Text += "Age : " + age + "\n";

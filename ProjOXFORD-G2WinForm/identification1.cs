@@ -31,7 +31,7 @@ namespace ProjOXFORD_G2WinForm
 
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
 
             //// Ajout de la transparence sur le lock
             imgTopper1.Controls.Add(imgUnlock);

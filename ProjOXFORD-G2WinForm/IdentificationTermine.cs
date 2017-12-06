@@ -37,7 +37,7 @@ namespace ProjOXFORD_G2WinForm
             this._faceId = faceId;
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         /// <summary> Event handler. Called by IdentificationTermine for load events. </summary>
