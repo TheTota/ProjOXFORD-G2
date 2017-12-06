@@ -200,30 +200,21 @@ namespace ProjOXFORD_G2
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
 
-                message.From = new MailAddress("ultramegabidon@gmail.com");
-                message.To.Add(new MailAddress("loicdelaunay05@gmail.com"));
+                message.From = new MailAddress("sio.bonaparte@gmail.com");
+                message.To.Add(new MailAddress("bts-sio@lyc-bonaparte.fr"));
                 message.Subject = "Inscription";
                 Attachment photo = new Attachment(photoPath);
                 message.Body = "Bonjour " +
-                    "\n" +
-                    "Merci d'être passé au stand du BTS SIO." +
-                    "\n" +
-                    "\n" + "Ce message fait suite à la réussite de votre inscription à travers notre application." +
-                    "\n" +
-                    "Pour plus d'informations sur le BTS, vous pouvez vous rendre sur notre site web à l'adresse suivante : https://bts-sio.lyc-bonaparte.fr/" +
-                    "\n" +
-                    "Bien à vous, blablabla l'équipe du BTS SIO SLAM\n" +
-                    "\n" +
-                    "-------------------------------------------------------------------------------------------------\n" +
-                    "Ceci est un méssage automatique\n" +
-                    "Merci de ne pas y répondre\n";
+                    "\n Bonjours," +
+                    "\n Cette personne a tenté  de pénétrer dans l'enceinte de l'entreprise sans l'autorisation." +
+                    "\n Merci de prendre les mesures adaptées.";
                 message.Attachments.Add(photo);
 
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new System.Net.NetworkCredential("ultramegabidon@gmail.com", "Megabidon83");
+                smtp.Credentials = new System.Net.NetworkCredential("sio.bonaparte@gmail.com", "Megabidon83");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }
